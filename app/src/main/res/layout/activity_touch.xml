@@ -7,13 +7,13 @@
     tools:context="com.zhangwx.z_utils.MainActivity">
 
 
-    <com.zhangwx.z_utils.Z_Widget.PullOrFlingFrameLayout
+    <com.zhangwx.z_utils.Z_TouchEvent.PullOrFlingFrameLayout
         android:id="@+id/pullFrameLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/btn_bg">
 
-    </com.zhangwx.z_utils.Z_Widget.PullOrFlingFrameLayout>
+    </com.zhangwx.z_utils.Z_TouchEvent.PullOrFlingFrameLayout>
 
     <com.zhangwx.z_utils.Z_TouchEvent.TouchButton
         android:id="@+id/touchTestBtn"

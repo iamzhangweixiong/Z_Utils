@@ -6,7 +6,6 @@ import android.view.View;
 
 import com.zhangwx.z_utils.R;
 import com.zhangwx.z_utils.Z_UI.ViewUtils;
-import com.zhangwx.z_utils.Z_Widget.PullOrFlingFrameLayout;
 
 /**
  * Created by zhangwx on 2017/1/4.
