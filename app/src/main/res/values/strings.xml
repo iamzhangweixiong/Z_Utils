@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Z_Utils</string>
+    <string name="recy">已扫描完成 &lt;font color=#149e5c &gt;%1$d&lt;/font&gt; 个应用</string>
+</resources>

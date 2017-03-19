@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/RecycleBtn"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="RecycleActivity" />
+
+    <Button
+        android:id="@+id/ViewPagerBtn"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="ViewPagerActivity" />
+
+    <Button
+        android:id="@+id/HandlerThreadBtn"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="HandlerThreadActivity" />
+
+    <Button
+        android:id="@+id/TouchTestBtn"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="TouchTestActivity" />
+
+    <Button
+        android:id="@+id/WindowTestBtn"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="WindowActivity" />
+
+</LinearLayout>

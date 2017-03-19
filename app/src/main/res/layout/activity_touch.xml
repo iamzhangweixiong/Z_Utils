@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.zhangwx.z_utils.MainActivity">
+
+
+    <com.zhangwx.z_utils.Z_Widget.PullOrFlingFrameLayout
+        android:id="@+id/pullFrameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/btn_bg">
+
+    </com.zhangwx.z_utils.Z_Widget.PullOrFlingFrameLayout>
+
+    <com.zhangwx.z_utils.Z_TouchEvent.TouchButton
+        android:id="@+id/touchTestBtn"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:text="TouchBtn" />
+
+</RelativeLayout>
