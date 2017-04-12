@@ -1,4 +1,4 @@
-package com.zhangwx.z_utils.Z_Pub;
+package com.zhangwx.z_utils.Z_Reflect;
 
 import android.text.TextUtils;
 
@@ -7,7 +7,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 /**
- * Created by Administrator on 2016/9/5.
+ * Created by zhangwx on 2016/9/5.
  */
 public class ReflectHelper {
     /**
@@ -18,7 +18,8 @@ public class ReflectHelper {
      * @param intArgs      参数值
      * @return Object
      */
-    public static Object invokeConstructor(ClassLoader loader, String className, Class[] intArgsClass, Object[] intArgs) {
+    public static Object invokeConstructor(ClassLoader loader, String className,
+                                           Class[] intArgsClass, Object[] intArgs) {
         if (loader == null || TextUtils.isEmpty(className)) {
             return null;
         }
@@ -137,7 +138,8 @@ public class ReflectHelper {
      * @param type       参数类型
      * @param value      参数值
      */
-    public static Object invokeMethodStrictly(Object object, String methodName, Class[] type, Object[] value) {
+    public static Object invokeMethodStrictly(Object object, String methodName,
+                                              Class[] type, Object[] value) {
         if (object == null || TextUtils.isEmpty(methodName)) {
             return null;
         }

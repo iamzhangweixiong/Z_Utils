@@ -34,4 +34,10 @@
         android:layout_height="56dp"
         android:text="WindowActivity" />
 
+    <Button
+        android:id="@+id/ReflectTestBtn"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="ReflectActivity" />
+
 </LinearLayout>

@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.zhangwx.z_utils.Z_RecycleView.RecycleActivity;
+import com.zhangwx.z_utils.Z_Reflect.ReflectActivity;
 import com.zhangwx.z_utils.Z_TouchEvent.TouchTestActivity;
 import com.zhangwx.z_utils.Z_UI.ViewUtils;
 import com.zhangwx.z_utils.Z_ViewPager.ViewPagerActivity;
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ViewUtils.$(this, R.id.HandlerThreadBtn).setOnClickListener(this);
         ViewUtils.$(this, R.id.TouchTestBtn).setOnClickListener(this);
         ViewUtils.$(this, R.id.WindowTestBtn).setOnClickListener(this);
+        ViewUtils.$(this, R.id.ReflectTestBtn).setOnClickListener(this);
     }
 
     @Override
@@ -42,6 +44,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.WindowTestBtn:
                 intent.setClass(this, WindowActivity.class);
+                break;
+            case R.id.ReflectTestBtn:
+                intent.setClass(this, ReflectActivity.class);
                 break;
         }
         startActivity(intent);
