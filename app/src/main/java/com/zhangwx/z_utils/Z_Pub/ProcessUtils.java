@@ -76,7 +76,7 @@ public class ProcessUtils {
 
     private static void doAvailMemExcludeCM(ActivityManager.MemoryInfo memoryInfo) {
 
-        int[] pids = new int[] { android.os.Process.myPid() };
+        int[] pids = new int[]{android.os.Process.myPid()};
 
         long[] pss = getDetailMem(pids);
         if (pss != null && pss.length == 3) {
@@ -86,8 +86,9 @@ public class ProcessUtils {
 
     /**
      * 单位是kb。</br>
-     *
-     * TotalMem可能返回0，会引起Bug，所以先修改为返回1，防止除法为0异常*/
+     * <p>
+     * TotalMem可能返回0，会引起Bug，所以先修改为返回1，防止除法为0异常
+     */
     public static long getTotalMem() {
         if (sTotalMemOfKB > 1) {
             return sTotalMemOfKB;
@@ -111,7 +112,7 @@ public class ProcessUtils {
             initial_memory = Integer.parseInt(strResult);
             localBufferedReader.close();
             sTotalMemOfKB = initial_memory;
-            return initial_memory ;
+            return initial_memory;
         } catch (Exception e) {
 
         }
@@ -208,7 +209,7 @@ public class ProcessUtils {
         return null;
     }
 
-    public static long[] getDetailMem(int[] pids){
+    public static long[] getDetailMem(int[] pids) {
         if (null == pids || pids.length <= 0)
             return null;
         long[] detailMem = new long[3];

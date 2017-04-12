@@ -1,6 +1,7 @@
 package com.zhangwx.z_utils.Z_Pub;
 
 import android.util.Log;
+
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -24,14 +25,12 @@ public class ZipHelper {
     static public boolean CreateZipFiles(File fs[], File zipFileName) {
         boolean result = false;
 
-        try
-        {
+        try {
             int buff_len = 1024;
             byte buff[] = new byte[buff_len];
 
             ZipOutputStream zo = new ZipOutputStream(new FileOutputStream(zipFileName));
-            for ( int i = 0; i < fs.length; i++ )
-            {
+            for (int i = 0; i < fs.length; i++) {
                 if (fs[i].exists() == false)
                     continue;
 
@@ -39,11 +38,9 @@ public class ZipHelper {
                 ZipEntry ze = new ZipEntry(fs[i].getName());
 
                 zo.putNextEntry(ze);
-                while ( true )
-                {
+                while (true) {
                     int count = fi.read(buff, 0, buff_len);
-                    if ( count <= 0 )
-                    {
+                    if (count <= 0) {
                         break;
                     }
 
@@ -57,13 +54,9 @@ public class ZipHelper {
             zo.close();
 
             result = true;
-        }
-        catch ( FileNotFoundException e )
-        {
+        } catch (FileNotFoundException e) {
 
-        }
-        catch ( IOException e)
-        {
+        } catch (IOException e) {
 
         }
 
@@ -73,14 +66,12 @@ public class ZipHelper {
     /**
      * 压缩文件,文件夹
      *
-     * @param srcFilePath
-     *            要压缩的文件/文件夹名字
-     * @param zipFilePath
-     *            指定压缩的目的和名字
+     * @param srcFilePath 要压缩的文件/文件夹名字
+     * @param zipFilePath 指定压缩的目的和名字
      * @throws Exception
      */
     public static void zipFolder(String srcFilePath, String zipFilePath) throws Exception {
-        if(null == srcFilePath || null == zipFilePath){
+        if (null == srcFilePath || null == zipFilePath) {
             return;
         }
         ZipOutputStream outZip = new ZipOutputStream(new FileOutputStream(zipFilePath));
@@ -144,6 +135,7 @@ public class ZipHelper {
     /**
      * 解压缩功能.
      * 将ZIP_FILENAME文件解压到ZIP_DIR目录下.
+     *
      * @throws Exception
      */
     public static int upZipFile(File zipFile, String folderPath) throws ZipException, IOException {
@@ -185,31 +177,32 @@ public class ZipHelper {
     /**
      * 解压缩功能.
      * 将ZIP_FILENAME文件解压到ZIP_DIR目录下.
+     *
      * @throws Exception
      */
-    public int upZipFile1(File zipFile, String folderPath)throws ZipException,IOException {
+    public int upZipFile1(File zipFile, String folderPath) throws ZipException, IOException {
         //public static void upZipFile() throws Exception{
-        ZipFile zfile=new ZipFile(zipFile);
-        Enumeration zList=zfile.entries();
-        ZipEntry ze=null;
-        byte[] buf=new byte[1024];
-        while(zList.hasMoreElements()){
-            ze=(ZipEntry)zList.nextElement();
-            if(ze.isDirectory()){
-                Log.d("upZipFile", "ze.getName() = "+ze.getName());
+        ZipFile zfile = new ZipFile(zipFile);
+        Enumeration zList = zfile.entries();
+        ZipEntry ze = null;
+        byte[] buf = new byte[1024];
+        while (zList.hasMoreElements()) {
+            ze = (ZipEntry) zList.nextElement();
+            if (ze.isDirectory()) {
+                Log.d("upZipFile", "ze.getName() = " + ze.getName());
                 String dirstr = folderPath + ze.getName();
                 //dirstr.trim();
                 dirstr = new String(dirstr.getBytes("8859_1"), "GB2312");
-                Log.d("upZipFile", "str = "+dirstr);
-                File f=new File(dirstr);
+                Log.d("upZipFile", "str = " + dirstr);
+                File f = new File(dirstr);
                 f.mkdir();
                 continue;
             }
-            Log.d("upZipFile", "ze.getName() = "+ze.getName());
-            OutputStream os=new BufferedOutputStream(new FileOutputStream(getRealFileName(folderPath, ze.getName())));
-            InputStream is=new BufferedInputStream(zfile.getInputStream(ze));
-            int readLen=0;
-            while ((readLen=is.read(buf, 0, 1024))!=-1) {
+            Log.d("upZipFile", "ze.getName() = " + ze.getName());
+            OutputStream os = new BufferedOutputStream(new FileOutputStream(getRealFileName(folderPath, ze.getName())));
+            InputStream is = new BufferedInputStream(zfile.getInputStream(ze));
+            int readLen = 0;
+            while ((readLen = is.read(buf, 0, 1024)) != -1) {
                 os.write(buf, 0, readLen);
             }
             is.close();
@@ -221,7 +214,8 @@ public class ZipHelper {
 
     /**
      * 给定根目录，返回一个相对路径所对应的实际文件名.
-     * @param baseDir 指定根目录
+     *
+     * @param baseDir     指定根目录
      * @param absFileName 相对路径名，来自于ZipEntry中的name
      * @return java.io.File 实际的文件
      */

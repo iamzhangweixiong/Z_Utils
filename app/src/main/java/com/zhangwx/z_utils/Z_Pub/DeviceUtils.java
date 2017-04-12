@@ -1,117 +1,91 @@
 package com.zhangwx.z_utils.Z_Pub;
 
-/**
- * Created by zhangwx on 2016/9/5.
- */
 
-import android.os.Build;
-import android.util.Log;
+import android.content.ContentResolver;
+import android.content.Context;
+import android.provider.Settings;
+import android.telephony.TelephonyManager;
 
-/**
- * 机型工具类
- *
- * @author zhangwx
- *
- */
+import java.util.Locale;
+
 public class DeviceUtils {
-    private static final String MODEL = Build.MODEL.toLowerCase();
-    private static final String MANUFACTURER = Build.MANUFACTURER.toLowerCase();
+    private static final int UUID_LENGTH = 32;
+    private static final Locale mPhoneLocale = null;
 
-    public static boolean isGTP1000() {
-        return MODEL.equalsIgnoreCase("gt-p1000");
-    }
-
-    public static boolean isZTEU985() {
-        return MANUFACTURER.equals("zte") && MODEL.contains("zte u985");
-    }
-
-    public static boolean isGts5830() {
-        return MODEL.equalsIgnoreCase("gt-s5830");
-    }
-
-    public static boolean isGts5838() {
-        return MODEL.equalsIgnoreCase("gt-s5838");
-    }
-
-    public static boolean isGtS5830i() {
-        return MODEL.equalsIgnoreCase("gt-s5830i");
-    }
-
-    public static boolean isG11() {
-        return MODEL.equals("HTC Incredible S");
-    }
-
-    public static boolean isI9000() {
-        return MODEL.equalsIgnoreCase("GT-I9000");
-    }
-
-    public static boolean isNexus5() {
-        return MODEL.equalsIgnoreCase("Nexus 5");
-    }
-
-    public static boolean isNexus5X() {
-        return MODEL.equalsIgnoreCase("Nexus 5x");
-    }
-
-    public static boolean isSamsung() {
-        return MANUFACTURER.contains("samsung");
-    }
-
-    /* model = E6    ;    brand  == GiONEE*/
-    public static boolean isGioneeE6(){
-        if(MODEL.equalsIgnoreCase("E6") && "GiONEE".equalsIgnoreCase(Build.BRAND)){
-            return true;
+    public static Locale getPhoneLocale(Context context) {
+        if (mPhoneLocale == null) {
+            return context.getResources().getConfiguration().locale;
         }
-        return false;
+        return mPhoneLocale;
     }
-    public static boolean isGioneeX817(){
-        if(MODEL.equalsIgnoreCase("X817") && "GiONEE".equalsIgnoreCase(Build.BRAND)){
-            return true;
+
+    public static String getAndroidID(Context context) {
+        try {
+            ContentResolver cr = context.getContentResolver();
+            String androidID = Settings.Secure.getString(cr, Settings.Secure.ANDROID_ID);
+            if (androidID == null) {
+                androidID = "";
+            }
+            return androidID;
+        } catch (Exception e) {
+            return "";
         }
-        return false;
     }
-
-    public static boolean isVivoX1St(){
-        if(MODEL.equalsIgnoreCase("vivo X1St") && "vivo".equalsIgnoreCase(Build.BRAND)){
-            return true;
+    public static String getUUID(Context context) {
+        if (context == null)
+            return null;
+        String phoneDeviceId = getAndroidID(context);//getIMEI(context);
+        int deviceIdLength = 0;
+        if (phoneDeviceId != null) {
+            deviceIdLength = phoneDeviceId.length();
         }
-        return false;
-    }
-
-    public static boolean isVenus_V3_5040() {
-        return MODEL.equalsIgnoreCase("Venus_V3_5040") && "Vestel".equalsIgnoreCase(Build.BRAND);
-    }
-
-    public static boolean isOneplus_A0001() {
-        return MODEL.equalsIgnoreCase("A0001") && "oneplus".equalsIgnoreCase(Build.BRAND);
-    }
-
-    public static boolean isVivoNoAccessibility() {
-        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.JELLY_BEAN_MR1 && "vivo".equalsIgnoreCase(Build.BRAND)) {
-            return true;
+        StringBuilder builder = new StringBuilder();
+        if (deviceIdLength == 0) {
+            for (int i = 0; i < UUID_LENGTH; i++) {
+                builder.append('0');
+            }
+        } else {
+            builder.append(phoneDeviceId);
         }
-        return false;
+        return builder.toString();
     }
 
-    private static Boolean sIsNote3;
-    public static boolean isNote3() {
-        if (sIsNote3 == null) {
-            sIsNote3 = MODEL.matches("(?i)(SM-N900|SM-N750).*");
+    public static String getMCC(Context context) {
+        if (context == null)
+            return "";
+        String mcc_mnc = getSimOperator(context);
+        StringBuilder mcc = null;
+        if (null != mcc_mnc && mcc_mnc.length() >= 3) {
+            mcc = new StringBuilder();
+            mcc.append(mcc_mnc, 0, 3);
+            return mcc.toString();
         }
-        return sIsNote3;
+        return "";
     }
 
-    public static boolean isHTC() {
-        return Build.BRAND.toLowerCase().contains("htc");
+    public static String getMNC(Context context) {
+        if (context == null)
+            return "";
+        String mcc_mnc = getSimOperator(context);
+        StringBuilder mnc = null;
+        if (null != mcc_mnc && mcc_mnc.length() >= 5) {
+            mnc = new StringBuilder();
+            mnc.append(mcc_mnc, 3, 5);
+            return mnc.toString();
+        }
+        return "";
     }
 
-    public static boolean isHUAWEI() {
-        return  Build.BRAND.toLowerCase().contains("huawei")  ||  Build.BRAND.toLowerCase().contains("honor");
+    private static String getSimOperator(Context context) {
+        String mcc_mnc = null;
+        try {
+            final TelephonyManager tm = (TelephonyManager)context
+                    .getSystemService(Context.TELEPHONY_SERVICE);
+            mcc_mnc = tm.getSimOperator();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return mcc_mnc;
     }
 
-    public static boolean isMemAbove2G() {
-        int total = (int)(ProcessUtils.getTotalMem() / 1024f / 1024f + 0.3f);
-        Log.e("zhangweixiong", "DeviceUtils isMemAbove2G : total is : " + total);
-        return total >= 2;
-    }
 }

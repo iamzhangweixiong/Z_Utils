@@ -53,7 +53,7 @@ import com.zhangwx.z_utils.R;
  * <p>
  * 7、FLAG_LAYOUT_IN_SCREEN：窗口占满整个屏幕，除了周围的装饰边框（例如状态栏）；
  * <p>
- * 8、FLAG_SHOW_WHEN_LOCKED：当屏幕锁定时，窗口可以被看到。这使得应用程序窗口优先于锁屏界面。可配合FLAG_KEEP_SCREEN_ON选项点亮屏幕并直接显示在锁屏界面之前。
+ * 8、FLAG_SHOW_WHEN_LOCKED：只有是全屏的window才起作用!!!当屏幕锁定时，窗口可以被看到。这使得应用程序窗口优先于锁屏界面。可配合FLAG_KEEP_SCREEN_ON选项点亮屏幕并直接显示在锁屏界面之前。
  */
 public class WindowService extends Service {
 
