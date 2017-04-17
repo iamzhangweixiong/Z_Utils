@@ -41,7 +41,7 @@ public class ReflectHelper {
     /**
      * 通过构造器取得实例
      *
-     * @param className    访问类名
+     * @param className    访问类名，这里需要传入类名的完整路径
      * @param intArgsClass 参数类型
      * @param intArgs      参数值
      * @return Object
