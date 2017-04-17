@@ -11,6 +11,7 @@ import com.zhangwx.z_utils.Z_TouchEvent.TouchTestActivity;
 import com.zhangwx.z_utils.Z_UI.ViewUtils;
 import com.zhangwx.z_utils.Z_ViewPager.ViewPagerActivity;
 import com.zhangwx.z_utils.Z_Window.WindowActivity;
+import com.zhangwx.z_utils.Z_intent.IntentActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ViewUtils.$(this, R.id.TouchTestBtn).setOnClickListener(this);
         ViewUtils.$(this, R.id.WindowTestBtn).setOnClickListener(this);
         ViewUtils.$(this, R.id.ReflectTestBtn).setOnClickListener(this);
+        ViewUtils.$(this, R.id.IntentTestBtn).setOnClickListener(this);
     }
 
     @Override
@@ -47,6 +49,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.ReflectTestBtn:
                 intent.setClass(this, ReflectActivity.class);
+                break;
+            case R.id.IntentTestBtn:
+                intent.setClass(this, IntentActivity.class);
                 break;
         }
         startActivity(intent);
