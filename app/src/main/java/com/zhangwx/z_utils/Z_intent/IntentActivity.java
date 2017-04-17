@@ -1,4 +1,4 @@
-package com.zhangwx.z_utils.Z_intent;
+package com.zhangwx.z_utils.Z_Intent;
 
 import android.app.Activity;
 import android.content.Intent;

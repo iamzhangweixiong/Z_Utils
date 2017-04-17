@@ -11,7 +11,7 @@ import com.zhangwx.z_utils.Z_TouchEvent.TouchTestActivity;
 import com.zhangwx.z_utils.Z_UI.ViewUtils;
 import com.zhangwx.z_utils.Z_ViewPager.ViewPagerActivity;
 import com.zhangwx.z_utils.Z_Window.WindowActivity;
-import com.zhangwx.z_utils.Z_intent.IntentActivity;
+import com.zhangwx.z_utils.Z_Intent.IntentActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 

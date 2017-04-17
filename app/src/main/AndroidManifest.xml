@@ -25,7 +25,7 @@
         <activity android:name=".Z_TouchEvent.TouchTestActivity" />
         <activity android:name=".Z_Window.WindowActivity" />
         <activity android:name=".Z_Reflect.ReflectActivity" />
-        <activity android:name=".Z_intent.IntentActivity" />
+        <activity android:name=".Z_Intent.IntentActivity" />
 
         <service
             android:name=".Z_Window.WindowService"
