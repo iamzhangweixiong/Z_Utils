@@ -26,6 +26,7 @@
         <activity android:name=".Z_Window.WindowActivity" />
         <activity android:name=".Z_Reflect.ReflectActivity" />
         <activity android:name=".Z_Intent.IntentActivity" />
+        <activity android:name=".Z_DB.DataBaseActivity" />
 
         <service
             android:name=".Z_Window.WindowService"
