@@ -11,12 +11,13 @@ import com.zhangwx.z_utils.R;
 
 public class DataBaseActivity extends Activity {
 
-
+    private DataBaseHelper dataBaseHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_db);
+        dataBaseHelper = new DataBaseHelper(this);
     }
-
+    
 }
