@@ -3,6 +3,8 @@ package com.zhangwx.z_utils;
 import android.app.Application;
 import android.content.Context;
 
+import com.facebook.stetho.Stetho;
+
 /**
  * <p>
  * 全局获取 Context
@@ -24,6 +26,7 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         context = getApplicationContext();
+        Stetho.initializeWithDefaults(this);
     }
 }
 
