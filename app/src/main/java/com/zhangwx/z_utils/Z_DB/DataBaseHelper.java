@@ -4,6 +4,8 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.zhangwx.z_utils.MyApplication;
+
 /**
  * Created by zhangwx on 2017/4/17.
  */
@@ -13,7 +15,20 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "zUtils.db";
 
-    public DataBaseHelper(Context context) {
+    private static DataBaseHelper sDataBaseHelper = null;
+
+    public static DataBaseHelper getInstance() {
+        if (sDataBaseHelper == null) {
+            synchronized (DataBaseHelper.class) {
+                if (sDataBaseHelper == null) {
+                    return new DataBaseHelper(MyApplication.getContext());
+                }
+            }
+        }
+        return sDataBaseHelper;
+    }
+
+    private DataBaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 

@@ -17,7 +17,7 @@ public class DataBaseActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_db);
-        dataBaseHelper = new DataBaseHelper(this);
+        dataBaseHelper = DataBaseHelper.getInstance();
     }
     
 }
