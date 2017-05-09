@@ -1,6 +1,7 @@
 package com.zhangwx.z_utils.Z_DB;
 
 import android.content.ContentValues;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.provider.BaseColumns;
 
@@ -69,6 +70,7 @@ public class UserInfoTable implements BaseColumns {
         DataBaseHelper.getInstance().getWritableDatabase().update(TABLE_USER_INFO, values, whereClause, whereArgs);
     }
 
-    public static void query() {
+    public static Cursor query(String[] columns, String selection, String[] selectionArgs) {
+        return DataBaseHelper.getInstance().getWritableDatabase().query(TABLE_USER_INFO, columns, selection, selectionArgs, null, null, null);
     }
 }
