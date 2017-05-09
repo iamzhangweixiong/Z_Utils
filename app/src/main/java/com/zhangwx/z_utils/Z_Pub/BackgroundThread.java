@@ -11,7 +11,7 @@ public class BackgroundThread extends HandlerThread {
     private static BackgroundThread sInstance;
     private static Handler sHandler;
 
-    public BackgroundThread() {
+    private BackgroundThread() {
         super("BackgroundThread", android.os.Process.THREAD_PRIORITY_DEFAULT);
     }
 
@@ -23,7 +23,7 @@ public class BackgroundThread extends HandlerThread {
         }
     }
 
-    public static BackgroundThread get() {
+    public static BackgroundThread getInstance() {
         synchronized (BackgroundThread.class) {
             ensureThreadLocked();
             return sInstance;

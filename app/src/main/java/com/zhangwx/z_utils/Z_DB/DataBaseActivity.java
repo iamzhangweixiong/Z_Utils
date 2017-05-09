@@ -25,7 +25,6 @@ public class DataBaseActivity extends Activity implements View.OnClickListener {
         ViewUtils.$(this, R.id.db_update).setOnClickListener(this);
         ViewUtils.$(this, R.id.db_query).setOnClickListener(this);
 
-        ViewUtils.$(this, R.id.DataList);
     }
 
     @Override
@@ -51,14 +50,22 @@ public class DataBaseActivity extends Activity implements View.OnClickListener {
     }
 
     private void actionUpdate() {
-
+        ContentValues value = new ContentValues();
+        value.put(UserInfoTable.COLUMN_AGE, 10);
+        value.put(UserInfoTable.COLUMN_NAME, "weixiong");
+        value.put(UserInfoTable.COLUMN_SEX, "man");
+        UserInfoTable.update(value, UserInfoTable.COLUMN_AGE + " = ? ", new String[]{"22"});
     }
 
     private void actionDelete() {
-
+        UserInfoTable.delete(UserInfoTable.COLUMN_AGE + " = ? ", new String[]{"22"});
     }
 
     private void actionAdd() {
         ContentValues value = new ContentValues();
+        value.put(UserInfoTable.COLUMN_AGE, 22);
+        value.put(UserInfoTable.COLUMN_NAME, "ZHANG");
+        value.put(UserInfoTable.COLUMN_SEX, "man");
+        UserInfoTable.insert(value);
     }
 }
