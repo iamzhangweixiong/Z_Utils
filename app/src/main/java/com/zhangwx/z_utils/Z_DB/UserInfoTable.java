@@ -1,5 +1,6 @@
 package com.zhangwx.z_utils.Z_DB;
 
+import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
 import android.provider.BaseColumns;
 
@@ -11,10 +12,10 @@ public class UserInfoTable implements BaseColumns {
 
     private static final String TABLE_USER_INFO = "userInfo";
 
-    private static final String COLUMN_ID = _ID;
-    private static final String COLUMN_NAME = "name";
-    private static final String COLUMN_AGE = "age";
-    private static final String COLUMN_SEX = "sex";
+    public static final String COLUMN_ID = _ID;
+    public static final String COLUMN_NAME = "name";
+    public static final String COLUMN_AGE = "age";
+    public static final String COLUMN_SEX = "sex";
 
     private static final String CREATE_TABLE = "CREATE TABLE " + TABLE_USER_INFO + "(" +
             COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -24,7 +25,7 @@ public class UserInfoTable implements BaseColumns {
 
     private static final String DROP_TABLE = "DROP TABLE IF EXISTS " + TABLE_USER_INFO;
 
-    public static void createTable(SQLiteDatabase database){
+    public static void createTable(SQLiteDatabase database) {
         database.execSQL(CREATE_TABLE);
     }
 
@@ -43,5 +44,31 @@ public class UserInfoTable implements BaseColumns {
 
             }
         }
+    }
+
+    public static void insert(ContentValues values) {
+        DataBaseHelper.getInstance().getWritableDatabase().insert(TABLE_USER_INFO, null, values);
+    }
+
+    /**
+     * 批量插入
+     *
+     * @param values
+     */
+    public static void bulkInsert(ContentValues[] values) {
+        for (ContentValues value : values) {
+            DataBaseHelper.getInstance().getWritableDatabase().insert(TABLE_USER_INFO, null, value);
+        }
+    }
+
+    public static void delete(String whereClause, String[] whereArgs) {
+        DataBaseHelper.getInstance().getWritableDatabase().delete(TABLE_USER_INFO, whereClause, whereArgs);
+    }
+
+    public static void update(ContentValues values, String whereClause, String[] whereArgs) {
+        DataBaseHelper.getInstance().getWritableDatabase().update(TABLE_USER_INFO, values, whereClause, whereArgs);
+    }
+
+    public static void query() {
     }
 }
