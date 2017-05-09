@@ -18,28 +18,28 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/add"
+            android:id="@+id/db_add"
             android:layout_width="0dp"
             android:layout_height="@dimen/btn_height"
             android:layout_weight="1"
             android:text="@string/add" />
 
         <Button
-            android:id="@+id/delete"
+            android:id="@+id/db_delete"
             android:layout_width="0dp"
             android:layout_height="@dimen/btn_height"
             android:layout_weight="1"
             android:text="@string/delete" />
 
         <Button
-            android:id="@+id/update"
+            android:id="@+id/db_update"
             android:layout_width="0dp"
             android:layout_height="@dimen/btn_height"
             android:layout_weight="1"
             android:text="@string/update" />
 
         <Button
-            android:id="@+id/query"
+            android:id="@+id/db_query"
             android:layout_width="0dp"
             android:layout_height="@dimen/btn_height"
             android:layout_weight="1"
