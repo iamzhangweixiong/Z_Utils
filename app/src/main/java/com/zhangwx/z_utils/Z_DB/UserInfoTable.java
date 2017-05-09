@@ -41,7 +41,7 @@ public class UserInfoTable implements BaseColumns {
             try {
                 database.endTransaction();
             } catch (Exception ex) {
-
+                ex.printStackTrace();
             }
         }
     }
