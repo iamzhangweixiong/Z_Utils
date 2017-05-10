@@ -16,7 +16,6 @@ import com.zhangwx.z_utils.Z_UI.ViewUtils;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.zip.Inflater;
 
 /**
  * Created by zhangwx on 2017/4/17.
@@ -63,12 +62,28 @@ public class DataBaseActivity extends Activity implements View.OnClickListener {
     }
 
     private void actionQuery() {
-        Cursor cursor = UserInfoTable.query(new String[]{UserInfoTable.COLUMN_SEX}, UserInfoTable.COLUMN_SEX + " = ? ", new String[]{"22"});
-        while (cursor.moveToNext()) {
-            final int pos = cursor.getPosition();
-            mDataList.add(pos, cursor.getString(cursor.getColumnIndex(UserInfoTable.COLUMN_NAME)) + "  "
-                    + cursor.getString(cursor.getColumnIndex(UserInfoTable.COLUMN_AGE)) + "  "
-                    + cursor.getString(cursor.getColumnIndex(UserInfoTable.COLUMN_SEX)));
+        Cursor cursor = null;
+        try {
+            cursor = UserInfoTable.query(null, UserInfoTable.COLUMN_SEX + " = ? ", new String[]{"man"});
+            if (cursor != null && cursor.moveToFirst()) {
+                do {
+                    int pos = cursor.getPosition();
+                    mDataList.add(pos, cursor.getString(cursor.getColumnIndex(UserInfoTable.COLUMN_NAME)) + "  "
+                            + cursor.getString(cursor.getColumnIndex(UserInfoTable.COLUMN_AGE)) + "  "
+                            + cursor.getString(cursor.getColumnIndex(UserInfoTable.COLUMN_SEX)));
+                } while (cursor.moveToNext());
+            }
+            cursor.close();
+            cursor = null;
+        } finally {
+            if (cursor == null) {
+                return;
+            }
+            try {
+                cursor.close();
+            } catch (Exception e) {
+                // do nothing
+            }
         }
         mDbAdapter.notifyDataSetChanged();
     }
