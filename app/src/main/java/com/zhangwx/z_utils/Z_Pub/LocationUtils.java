@@ -80,7 +80,7 @@ public class LocationUtils {
             /**
              * CountryName = 中国
              * AddressLine = 中国
-             * ddressLine1 = 北京市朝阳区
+             * AddressLine1 = 北京市朝阳区
              * AddressLine2 = 黄杉木店路186号
              * FeatureName = 186
              * AdminArea = 北京市
