@@ -29,6 +29,8 @@
         <activity android:name=".Z_Reflect.ReflectActivity" />
         <activity android:name=".Z_Intent.IntentActivity" />
         <activity android:name=".Z_DB.DataBaseActivity" />
+        <activity android:name=".Z_Permission.AppSettingsDialogHolderActivity" />
+        <activity android:name=".Z_Permission.bridge.RequestBridgeActivity" />
 
         <service
             android:name=".Z_Window.WindowService"

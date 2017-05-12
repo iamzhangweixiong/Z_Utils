@@ -5,9 +5,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 
-import com.zhangwx.dynamicpermissionsrequest.permission.AppSettingsDialog;
-import com.zhangwx.dynamicpermissionsrequest.permission.EasyPermissions;
-import com.zhangwx.dynamicpermissionsrequest.permission.PermissionUtils;
+import com.zhangwx.z_utils.Z_Permission.AppSettingsDialog;
+import com.zhangwx.z_utils.Z_Permission.EasyPermissions;
+import com.zhangwx.z_utils.Z_Permission.PermissionUtils;
 
 import java.util.List;
 
