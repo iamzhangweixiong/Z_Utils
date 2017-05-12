@@ -73,17 +73,15 @@ public class DataBaseActivity extends Activity implements View.OnClickListener {
                             + cursor.getString(cursor.getColumnIndex(UserInfoTable.COLUMN_SEX)));
                 } while (cursor.moveToNext());
             }
-            cursor.close();
-            cursor = null;
+        } catch (Exception e) {
         } finally {
-            if (cursor == null) {
+            if (cursor == null)
                 return;
-            }
             try {
                 cursor.close();
             } catch (Exception e) {
-                // do nothing
             }
+
         }
         mDbAdapter.notifyDataSetChanged();
     }
