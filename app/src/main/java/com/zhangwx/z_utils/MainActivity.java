@@ -8,6 +8,7 @@ import android.view.View;
 import com.zhangwx.z_utils.Z_DB.DataBaseActivity;
 import com.zhangwx.z_utils.Z_RecycleView.RecycleActivity;
 import com.zhangwx.z_utils.Z_Reflect.ReflectActivity;
+import com.zhangwx.z_utils.Z_Thread.HandlerThreadActivity;
 import com.zhangwx.z_utils.Z_TouchEvent.TouchTestActivity;
 import com.zhangwx.z_utils.Z_UI.ViewUtils;
 import com.zhangwx.z_utils.Z_ViewPager.ViewPagerActivity;

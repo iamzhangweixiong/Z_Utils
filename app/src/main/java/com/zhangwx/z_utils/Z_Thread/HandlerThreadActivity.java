@@ -1,4 +1,4 @@
-package com.zhangwx.z_utils;
+package com.zhangwx.z_utils.Z_Thread;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -10,10 +10,12 @@ import android.widget.TextView;
 
 import java.util.Locale;
 
+import com.zhangwx.z_utils.R;
 import com.zhangwx.z_utils.Z_UI.ViewUtils;
 
 /**
- * Created by Administrator on 2016/12/22.
+ * Created by zhangex on 2016/12/22.
+ *
  */
 public class HandlerThreadActivity  extends AppCompatActivity {
     private static final int MSG_UPDATE_INFO = 0x10;

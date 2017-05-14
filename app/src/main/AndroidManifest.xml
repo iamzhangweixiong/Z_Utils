@@ -23,7 +23,7 @@
         </activity>
         <activity android:name=".Z_RecycleView.RecycleActivity" />
         <activity android:name=".Z_ViewPager.ViewPagerActivity" />
-        <activity android:name=".HandlerThreadActivity" />
+        <activity android:name=".Z_Thread.HandlerThreadActivity" />
         <activity android:name=".Z_TouchEvent.TouchTestActivity" />
         <activity android:name=".Z_Window.WindowActivity" />
         <activity android:name=".Z_Reflect.ReflectActivity" />
