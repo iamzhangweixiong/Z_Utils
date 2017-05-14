@@ -11,7 +11,7 @@ import android.provider.BaseColumns;
 
 public class UserInfoTable implements BaseColumns {
 
-    private static final String TABLE_USER_INFO = "userInfo";
+    private static final String TABLE_USER_INFO = "z_userInfo";
 
     public static final String COLUMN_ID = _ID;
     public static final String COLUMN_NAME = "name";
@@ -57,8 +57,15 @@ public class UserInfoTable implements BaseColumns {
      * @param values
      */
     public static void bulkInsert(ContentValues[] values) {
-        for (ContentValues value : values) {
-            DataBaseHelper.getInstance().getWritableDatabase().insert(TABLE_USER_INFO, null, value);
+        SQLiteDatabase database = DataBaseHelper.getInstance().getWritableDatabase();
+        database.beginTransaction();
+        try {
+            for (ContentValues value : values) {
+                DataBaseHelper.getInstance().getWritableDatabase().insert(TABLE_USER_INFO, null, value);
+            }
+            database.setTransactionSuccessful();
+        } finally {
+            database.endTransaction();
         }
     }
 

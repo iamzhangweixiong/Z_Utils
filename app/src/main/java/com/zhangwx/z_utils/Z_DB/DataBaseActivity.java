@@ -75,13 +75,12 @@ public class DataBaseActivity extends Activity implements View.OnClickListener {
             }
         } catch (Exception e) {
         } finally {
-            if (cursor == null)
-                return;
             try {
-                cursor.close();
+                if (cursor != null) {
+                    cursor.close();
+                }
             } catch (Exception e) {
             }
-
         }
         mDbAdapter.notifyDataSetChanged();
     }
@@ -110,7 +109,7 @@ public class DataBaseActivity extends Activity implements View.OnClickListener {
 
         @Override
         public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(getApplicationContext()).inflate(R.layout.dbquerycard, null);
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.dbquerycard, parent, false);
             DBViewHolder viewHolder = new DBViewHolder(view);
             return viewHolder;
         }
