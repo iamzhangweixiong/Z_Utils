@@ -66,6 +66,7 @@ public class DataBaseActivity extends Activity implements View.OnClickListener {
         try {
             cursor = UserInfoTable.query(null, UserInfoTable.COLUMN_SEX + " = ? ", new String[]{"man"});
             if (cursor != null && cursor.moveToFirst()) {
+                mDataList.clear();
                 do {
                     int pos = cursor.getPosition();
                     mDataList.add(pos, cursor.getString(cursor.getColumnIndex(UserInfoTable.COLUMN_NAME)) + "  "
@@ -91,10 +92,12 @@ public class DataBaseActivity extends Activity implements View.OnClickListener {
         value.put(UserInfoTable.COLUMN_NAME, "weixiong");
         value.put(UserInfoTable.COLUMN_SEX, "man");
         UserInfoTable.update(value, UserInfoTable.COLUMN_AGE + " = ? ", new String[]{"22"});
+        actionQuery();
     }
 
     private void actionDelete() {
         UserInfoTable.delete(UserInfoTable.COLUMN_AGE + " = ? ", new String[]{"22"});
+        actionQuery();
     }
 
     private void actionAdd() {
@@ -103,6 +106,7 @@ public class DataBaseActivity extends Activity implements View.OnClickListener {
         value.put(UserInfoTable.COLUMN_NAME, "ZHANG");
         value.put(UserInfoTable.COLUMN_SEX, "man");
         UserInfoTable.insert(value);
+        actionQuery();
     }
 
     private class DBAdapter extends RecyclerView.Adapter {
