@@ -45,12 +45,30 @@ public class LocationUtils {
      * 通过地理位置拿国家码
      * @return
      */
-    public static String getCountryCodeByLocation() {
-        Location location = getLocation();
-        Geocoder geocoder = new Geocoder(MyApplication.getContext(), Locale.getDefault());
+    public static String getISOCodeByLocation(Context ctx) {
+        if (getAddress(ctx) != null) {
+            return getAddress(ctx).getCountryCode();
+        }
+        return null;
+    }
 
+    /**
+     * 通过地理位置拿国家名
+     * @return
+     */
+    public static String getCountryNameByLocation(Context ctx) {
+        if (getAddress(ctx) != null) {
+            return getAddress(ctx).getCountryName();
+        }
+        return null;
+    }
+
+    private static Address getAddress(Context ctx) {
+        Location location = getLocation();
+        if (location == null)
+            return null;
+        Geocoder geocoder = new Geocoder(ctx, Locale.getDefault());
         List<Address> addresses = null;
-        String countryCode = "";
         try {
             addresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
         } catch (IOException e) {
@@ -58,7 +76,6 @@ public class LocationUtils {
         }
         if (addresses != null && addresses.size() > 0) {
             Address address = addresses.get(0);
-            countryCode = address.getCountryCode();//国家码
             Log.e(TAG, "getCountryCodeByLocation: ");
             Log.e(TAG, "  CountryName = " + address.getCountryName());
             Log.e(TAG, "  AddressLine = " + address.getAddressLine(0));
@@ -76,7 +93,7 @@ public class LocationUtils {
             Log.e(TAG, "  SubThoroughfare = " + address.getSubThoroughfare());
             Log.e(TAG, "  Url = " + address.getUrl());
             Log.e(TAG, "  MaxAddressLineIndex = " + address.getMaxAddressLineIndex());
-            Log.e(TAG, "  countryCode = " + countryCode);
+            Log.e(TAG, "  countryCode = " + address.getCountryCode());
             /**
              * CountryName = 中国
              * AddressLine = 中国
@@ -96,7 +113,8 @@ public class LocationUtils {
              * MaxAddressLineIndex = 3
              * countryCode = CN
              */
+            return address;
         }
-        return countryCode;
+        return null;
     }
 }

@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 
 import com.facebook.stetho.Stetho;
+import com.squareup.leakcanary.LeakCanary;
 
 /**
  * <p>
@@ -27,6 +28,7 @@ public class MyApplication extends Application {
         super.onCreate();
         context = getApplicationContext();
         Stetho.initializeWithDefaults(this);
+        LeakCanary.install(this);
     }
 }
 
