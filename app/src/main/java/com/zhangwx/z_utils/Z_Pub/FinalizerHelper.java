@@ -13,7 +13,7 @@ import java.lang.reflect.Method;
  */
 
 public class FinalizerHelper {
-    public static final String TAG = "FinalizerHelper";
+    private static final String TAG = "FinalizerHelper";
     private Class<?> mFinalizerClazz = null;
     private Field mUnFinalizedField = null;
     private Field mNextField = null;
