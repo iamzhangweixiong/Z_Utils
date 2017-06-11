@@ -2,9 +2,8 @@ package com.zhangwx.z_utils.Z_Intent;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.view.View;
 
 import com.zhangwx.z_utils.R;
@@ -28,11 +27,23 @@ public class IntentActivity extends Activity implements View.OnClickListener {
         switch (view.getId()) {
             case R.id.Jump_setting:
 //                Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION);//在其他应用上层显示
-                Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);//跳转应用详情页
-                Uri uri = Uri.fromParts("package", getPackageName(), null);
-                intent.setData(uri);
+//                Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);//跳转应用详情页
+//                Uri uri = Uri.fromParts("package", getPackageName(), null);
+//                intent.setData(uri);
+                Intent intent = getNotificationServiceSettingIntent();//跳转通知栏权限页
                 startActivity(intent);
                 break;
         }
+    }
+
+    public Intent getNotificationServiceSettingIntent() {
+        Intent intent = null;
+        if (Build.VERSION.SDK_INT >= 18) {
+            intent = new Intent("android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS");
+        } else {
+            intent = new Intent("android.settings.ACCESSIBILITY_SETTINGS");
+        }
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        return intent;
     }
 }

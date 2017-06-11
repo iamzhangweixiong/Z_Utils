@@ -35,6 +35,15 @@
         <service
             android:name=".Z_Window.WindowService"
             android:process=":locker" />
+
+        <service
+            android:name=".Z_Intent.NotificationListener"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"
+            android:process=":service">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

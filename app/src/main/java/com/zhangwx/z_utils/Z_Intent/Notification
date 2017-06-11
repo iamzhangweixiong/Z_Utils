@@ -1,0 +1,15 @@
+
+ 通知栏权限：
+
+ 1、Manifest 设置：在权限设置页展示本 App
+
+  <service
+      android:name=".Z_Intent.NotificationListener"
+      android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"
+      android:process=":service">
+      <intent-filter>
+          <action android:name="android.service.notification.NotificationListenerService" />
+      </intent-filter>
+  </service>
+
+ 2、
