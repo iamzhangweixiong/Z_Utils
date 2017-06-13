@@ -22,8 +22,9 @@ import com.zhangwx.z_utils.R;
 public class NotificationHelper {
 
     private static final String ENABLED_NOTIFICATION_LISTENERS = "enabled_notification_listeners";
-    public static final int MAIN_REQUEST_CODE = 1111;
-    public static final int OWN_REQUEST_CODE = 1112;
+    private static final int MAIN_REQUEST_CODE = 1111;
+    private static final int OWN_REQUEST_CODE = 1112;
+    private static final int NITIFY_ID = 1;
 
     // 判断用户是否开启了 Notification access
     public static boolean isEnabled(Context context) {
@@ -52,6 +53,9 @@ public class NotificationHelper {
                 .setContentTitle("title")
                 .setSmallIcon(R.drawable.screen3_feed_icon_loading)
                 .setContentText("content")
+                .setDefaults(Notification.DEFAULT_SOUND)
+                .setPriority(Notification.PRIORITY_MAX)
+                .setTicker("Ticker")
                 .setAutoCancel(true);
         Notification notification = builder.build();
         RemoteViews mRemoteViews = new RemoteViews(context.getPackageName(), R.layout.notificationlayout);
@@ -72,6 +76,6 @@ public class NotificationHelper {
         mRemoteViews.setOnClickPendingIntent(R.id.goOwn, ownIntent);
 
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-        notificationManager.notify(1, notification);
+        notificationManager.notify(NITIFY_ID, notification);
     }
 }

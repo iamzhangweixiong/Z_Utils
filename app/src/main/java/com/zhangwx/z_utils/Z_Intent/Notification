@@ -13,3 +13,7 @@
   </service>
 
  2、
+ PRIORITY_MIN：仅仅展示在通知栏上，不会有震动/提示音或者ticker提示，即时你设置了
+ PRIORITY_LOW：有震动/提示音，没有ticker提示
+ PRIORITY_DEFAULT：有震动/提示音，没有ticker提示
+ PRIORITY_HIGH：有震动/提示音，没有ticker提示，回在主界面弹出通知栏内容
