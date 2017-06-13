@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.zhangwx.z_utils.R;
@@ -15,11 +16,32 @@ import com.zhangwx.z_utils.Z_UI.ViewUtils;
 
 public class IntentActivity extends Activity implements View.OnClickListener {
 
+    public static final String TAG = "IntentActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intent);
         ViewUtils.$(this, R.id.Jump_setting).setOnClickListener(this);
+        ViewUtils.$(this, R.id.notification).setOnClickListener(this);
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.e(TAG, "onRestart: isEnabled = " + NotificationHelper.isEnabled(this));
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.e(TAG, "onStart: isEnabled = " + NotificationHelper.isEnabled(this));
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.e(TAG, "onResume: isEnabled = " + NotificationHelper.isEnabled(this));
     }
 
     @Override
@@ -33,12 +55,15 @@ public class IntentActivity extends Activity implements View.OnClickListener {
                 Intent intent = getNotificationServiceSettingIntent();//跳转通知栏权限页
                 startActivity(intent);
                 break;
+            case R.id.notification:
+                NotificationHelper.showNotification(this);
+                break;
         }
     }
 
     public Intent getNotificationServiceSettingIntent() {
         Intent intent = null;
-        if (Build.VERSION.SDK_INT >= 18) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
             intent = new Intent("android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS");
         } else {
             intent = new Intent("android.settings.ACCESSIBILITY_SETTINGS");
