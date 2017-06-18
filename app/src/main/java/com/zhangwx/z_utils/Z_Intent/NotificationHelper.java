@@ -53,7 +53,6 @@ public class NotificationHelper {
                 .setContentTitle("title")
                 .setSmallIcon(R.drawable.screen3_feed_icon_loading)
                 .setContentText("content")
-                .setDefaults(Notification.DEFAULT_SOUND)
                 .setPriority(Notification.PRIORITY_MAX)
                 .setTicker("Ticker")
                 .setAutoCancel(true);

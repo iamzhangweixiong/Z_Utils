@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 
@@ -54,6 +55,15 @@ public class IntentActivity extends Activity implements View.OnClickListener {
 //                intent.setData(uri);
                 Intent intent = getNotificationServiceSettingIntent();//跳转通知栏权限页
                 startActivity(intent);
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent intent1 = new Intent(getApplication(), NotificationActivity.class);
+                        startActivity(intent1);
+                    }
+                }, 500);
+
                 break;
             case R.id.notification:
                 NotificationHelper.showNotification(this);

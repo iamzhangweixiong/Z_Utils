@@ -31,6 +31,12 @@
         <activity android:name=".Z_DB.DataBaseActivity" />
         <activity android:name=".Z_Permission.AppSettingsDialogHolderActivity" />
         <activity android:name=".Z_Permission.bridge.RequestBridgeActivity" />
+        <activity
+            android:name=".Z_Intent.NotificationActivity"
+            android:excludeFromRecents="true"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.GuideAlpha" />
 
         <service
             android:name=".Z_Window.WindowService"
@@ -44,6 +50,7 @@
                 <action android:name="android.service.notification.NotificationListenerService" />
             </intent-filter>
         </service>
+        <service android:name=".Z_Intent.NotificationGuideService" />
     </application>
 
 </manifest>
