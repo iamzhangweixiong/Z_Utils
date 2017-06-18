@@ -8,7 +8,8 @@ import android.util.AttributeSet;
 import android.view.View;
 
 /**
- * Created by wangye on 16-3-30.
+ * Created by zhangwx
+ * on 16-3-30.
  */
 public class ToggleView extends View {
 

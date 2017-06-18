@@ -16,7 +16,7 @@ import com.zhangwx.z_utils.Z_UI.DimenUtils;
 
 
 /**
- * @author shidefeng
+ * @author zhangwx
  * @since 2016/4/20
  */
 public class TickView extends View {
