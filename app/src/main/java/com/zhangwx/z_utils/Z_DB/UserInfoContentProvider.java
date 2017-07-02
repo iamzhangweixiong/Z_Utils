@@ -20,7 +20,7 @@ import static com.zhangwx.z_utils.Z_DB.UserInfoTable.TABLE_USER_INFO;
  * https://developer.android.com/guide/topics/providers/content-provider-basics.html
  * <p>
  * "/userInfo" 选择 userInfo 中的所有内容
- *
+ * <p>
  * "/userInfo/#" 选择 userInfo id 为 x 的一条内容
  * <p>
  * 查询 id 为 10 的那一行的 uri ：Uri.parse(UserInfoContentProvider.CONTENT_URI + "/10");
@@ -29,6 +29,11 @@ import static com.zhangwx.z_utils.Z_DB.UserInfoTable.TABLE_USER_INFO;
  * 不知道为什么要这么设计，个人觉得这样太挫逼了
  * </p>
  *
+ * <p>
+ * /vnd.zhangwx.userInfo
+ * MIME 类型标准写法
+ * CONTENT_URI：content://com.example.trains/Line2/5
+ * --> MIME：ContentResolver.CURSOR_DIR_BASE_TYPE + "/vnd.example.line2"
  */
 
 public class UserInfoContentProvider extends ContentProvider {
