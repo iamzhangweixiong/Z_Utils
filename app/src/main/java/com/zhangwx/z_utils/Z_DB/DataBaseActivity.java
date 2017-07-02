@@ -3,6 +3,7 @@ package com.zhangwx.z_utils.Z_DB;
 import android.app.Activity;
 import android.content.ContentValues;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -56,9 +57,40 @@ public class DataBaseActivity extends Activity implements View.OnClickListener {
                 actionUpdate();
                 break;
             case R.id.db_query:
-                actionQuery();
+//                actionQuery();
+                providerQuery();
                 break;
         }
+    }
+
+    /**
+     * query 中的 projection 参数指定要返回哪些列的内容，传 null 表示返回所有的列
+     * 无法理解为什么这里的 "／" 要自己加上
+     */
+    private void providerQuery() {
+        Cursor cursor = null;
+        try {
+            Uri uri = Uri.parse(UserInfoContentProvider.CONTENT_URI + "/10");
+            cursor = getContentResolver().query(uri, null, null, null, null);
+            if (cursor != null && cursor.moveToFirst()) {
+                mDataList.clear();
+                do {
+                    int pos = cursor.getPosition();
+                    mDataList.add(pos, cursor.getString(cursor.getColumnIndex(UserInfoTable.COLUMN_NAME)) + "  "
+                            + cursor.getString(cursor.getColumnIndex(UserInfoTable.COLUMN_AGE)) + "  "
+                            + cursor.getString(cursor.getColumnIndex(UserInfoTable.COLUMN_SEX)));
+
+                } while (cursor.moveToNext());
+            }
+        } finally {
+            try {
+                if (cursor != null) {
+                    cursor.close();
+                }
+            } catch (Exception e) {
+            }
+        }
+        mDbAdapter.notifyDataSetChanged();
     }
 
     private void actionQuery() {

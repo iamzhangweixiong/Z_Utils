@@ -11,7 +11,7 @@ import android.provider.BaseColumns;
 
 public class UserInfoTable implements BaseColumns {
 
-    private static final String TABLE_USER_INFO = "z_userInfo";
+    public static final String TABLE_USER_INFO = "z_userInfo";
 
     public static final String COLUMN_ID = _ID;
     public static final String COLUMN_NAME = "name";
