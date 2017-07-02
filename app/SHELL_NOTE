@@ -1,0 +1,22 @@
+
+常用命令行：
+
+1、cat /proc/进程pid/oom_score
+    查看进程的 oom 分数，越高越容易被杀；oom_adj 为调整分数，同样越高越容易被杀
+
+2、查看文件
+    adb shell cat /data/anr/traces.txt
+
+3、拉出文件 在执行这个命令的目录下能找到 mytraces.txt
+    adb pull data/anr/traces.txt ./mytraces.txt
+
+4、看 log
+    adb logcat -s zhang
+
+5、刷新dns缓存
+    ipconfig /flushdns
+
+6、强制设置手机为“充电状态”，调试屏保秘籍。
+    adb shell dumpsys battery set ac 1
+
+7、ps 列出当前进程

@@ -1,0 +1,18 @@
+
+gradle.properties 优化设置
+
+[AspectJ]
+systemProp.need_instrument_opened = false
+systemProp.need_instrument_opened_for_bate = false
+systemProp.need_inspector = false
+
+[ReShrink]
+systemProp.need_resource_shrink = false
+
+[Redex]
+systemProp.need_redex = false
+
+org.gradle.jvmargs = -Xmx5120m -XX:MaxPermSize=2560m
+org.gradle.parallel = true
+org.gradle.daemon = true
+android.enableBuildCache = true
