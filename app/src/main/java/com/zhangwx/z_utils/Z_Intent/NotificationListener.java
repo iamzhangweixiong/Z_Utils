@@ -53,15 +53,17 @@ public class NotificationListener extends NotificationListenerService {
 
     @Override
     public void onNotificationPosted(StatusBarNotification sbn) {
-        super.onNotificationPosted(sbn);
+//        super.onNotificationPosted(sbn);
+//        这里的 super 不能调，因为 4.3 系统此方法的实现是 abstract，会报 abstract method not implemented 错误
+
         //当系统收到一条通知栏通知时会回调此接口
         Log.e(TAG, "onNotificationPosted: sbn = " + sbn.toString());
     }
 
     @Override
-    public void onNotificationPosted(StatusBarNotification sbn, RankingMap rankingMap) {
-        super.onNotificationPosted(sbn, rankingMap);
-        Log.e(TAG, "onNotificationPosted: sbn = " + sbn.toString());
+    public void onNotificationRemoved(StatusBarNotification sbn) {
+//        super.onNotificationRemoved(sbn);
+//        这里的 super 不能调，因为 4.3 系统此方法的实现是 abstract，会报 abstract method not implemented 错误
     }
 
     @Override
