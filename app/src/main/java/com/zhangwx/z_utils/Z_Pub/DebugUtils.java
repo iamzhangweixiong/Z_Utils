@@ -12,6 +12,8 @@ import java.io.IOException;
 
 public class DebugUtils {
 
+    public static final String TAG_SYNC = "SYNC";
+
 //    public class TestHelper {
 //        private boolean isTesting = false;
 //        private static TestHelper testHelper = null;

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+android:contentAuthority
+    指定要同步的 ContentProvider，在其 AndroidManifest 文件中有个 android:authorities 属性
+
+android:accountType
+    表示进行同步的账号的类型，当前类型是 com.zhangwx.syncadapter
+    这里有一个大坑，当我的账号类型设置为 com.zhangwx.z_utils.sync.SyncAdapter 的时候怎么跑都跑不通
+    所以这里的类型长度应该是有限制的，应该是不能太长而且不能有大写字母，官方文档居然没有对这一块做出说明，真。。。
+
+android:userVisible 设置是否在“设置”中显示
+
+android:supportsUploading 设置是否必须 notifyChange 通知才能同步
+
+android:allowParallelSyncs 是否支持多账号同时同步
+
+android:isAlwaysSyncable 设置所有账号的 isSyncable 为1
+
+android:syncAdapterSettingsAction 指定一个可以设置同步的 activity 的 Action
+-->
+<sync-adapter xmlns:android="http://schemas.android.com/apk/res/android"
+    android:accountType="@string/account_type"
+    android:allowParallelSyncs="false"
+    android:contentAuthority="com.zhangwx.z_utils.provider.account"
+    android:isAlwaysSyncable="true"
+    android:supportsUploading="false"
+    android:userVisible="true"/>
