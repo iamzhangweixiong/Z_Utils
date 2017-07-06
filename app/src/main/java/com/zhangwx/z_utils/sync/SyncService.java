@@ -3,6 +3,7 @@ package com.zhangwx.z_utils.sync;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
+import android.support.annotation.IntDef;
 import android.util.Log;
 
 import static com.zhangwx.z_utils.Z_Pub.DebugUtils.TAG_SYNC;

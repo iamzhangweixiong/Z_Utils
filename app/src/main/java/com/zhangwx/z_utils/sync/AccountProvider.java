@@ -17,7 +17,7 @@ import static com.zhangwx.z_utils.Z_Pub.DebugUtils.TAG_SYNC;
 
 public class AccountProvider extends ContentProvider {
 
-    public static final String  AUTHORITY =  "com.zhangwx.z_utils.provider.account";
+    public static final String AUTHORITY =  "com.zhangwx.z_utils.provider.account";
     private static final String CONTENT_URI_BASE = "content://" + AUTHORITY;
     private static final String TABLE_NAME = "data";
     public static final Uri CONTENT_URI = Uri.parse(CONTENT_URI_BASE + "/" + TABLE_NAME);

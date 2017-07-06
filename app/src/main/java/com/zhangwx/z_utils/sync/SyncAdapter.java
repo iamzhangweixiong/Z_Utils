@@ -6,7 +6,13 @@ import android.content.ContentProviderClient;
 import android.content.Context;
 import android.content.SyncResult;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
+import android.widget.Toast;
+
+import com.zhangwx.z_utils.MyApplication;
+import com.zhangwx.z_utils.Z_Thread.HandlerThread.BackgroundThread;
 
 import static com.zhangwx.z_utils.Z_Pub.DebugUtils.TAG_SYNC;
 
@@ -30,5 +36,11 @@ public class SyncAdapter extends AbstractThreadedSyncAdapter {
     @Override
     public void onPerformSync(Account account, Bundle bundle, String authority, ContentProviderClient contentProviderClient, SyncResult syncResult) {
         Log.e(TAG_SYNC, "SyncAdapter onPerformSync");
+        new Handler(Looper.getMainLooper()).post(new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(MyApplication.getContext(), "onPerformSync", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
