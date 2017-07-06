@@ -1,0 +1,8 @@
+
+Q1:为什么要用 ContentProvider
+SyncAdapter 的 framework  层的设计就是要和设备数据配合使用，且设备的数据要使用 ContentProvider 的框架。
+所以要用到 ContentProvider 的 authorities。
+
+Q2:为什么要用 Authenticator
+SyncAdapter 的 framework  层的设计场景是关联账户的客户端需要和认证的服务端同步数据。
+所以即使我们不需要用到账户，也要提供一个 Authenticator 组件，作为 SyncAdapter 的一部分。
