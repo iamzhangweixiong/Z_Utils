@@ -8,7 +8,7 @@ android:accountType
     这里有一个大坑，当我的账号类型设置为 com.zhangwx.z_utils.sync.SyncAdapter 的时候怎么跑都跑不通
     所以这里的类型长度应该是有限制的，应该是不能太长而且不能有大写字母，官方文档居然没有对这一块做出说明，真。。。
 
-android:userVisible 设置是否在“设置”中显示
+android:userVisible 设置是否在“设置”中显示，貌似没什么卵用 @link authenticator
 
 android:supportsUploading 设置是否必须 notifyChange 通知才能同步
 
@@ -24,4 +24,4 @@ android:syncAdapterSettingsAction 指定一个可以设置同步的 activity 的
     android:contentAuthority="com.zhangwx.z_utils.provider.account"
     android:isAlwaysSyncable="true"
     android:supportsUploading="false"
-    android:userVisible="true"/>
+    android:userVisible="false"/>
