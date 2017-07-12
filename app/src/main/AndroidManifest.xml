@@ -7,15 +7,6 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
-    <!-- Required for fetching feed data. -->
-    <uses-permission android:name="android.permission.INTERNET" />
-    <!-- Required to register a SyncStatusObserver to display a "syncing..." progress indicator. -->
-    <uses-permission android:name="android.permission.READ_SYNC_STATS" />
-    <!-- Required to enable our SyncAdapter after it's created. -->
-    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
-    <!-- Required because we're manually creating a new account. -->
-    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
-
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -65,33 +56,6 @@
             android:name=".Z_DB.UserInfoContentProvider"
             android:authorities="${applicationId}.provider" />
 
-        <provider
-            android:name=".sync.AccountProvider"
-            android:authorities="com.zhangwx.z_utils.provider.account"
-            android:exported="true"
-            android:syncable="true" />
-
-        <service
-            android:name=".sync.SyncService"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.content.SyncAdapter" />
-            </intent-filter>
-            <meta-data
-                android:name="android.content.SyncAdapter"
-                android:resource="@xml/sync_adapter" />
-        </service>
-
-        <service
-            android:name=".sync.AccountService"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.accounts.AccountAuthenticator" />
-            </intent-filter>
-            <meta-data
-                android:name="android.accounts.AccountAuthenticator"
-                android:resource="@xml/authenticator" />
-        </service>
     </application>
 
 </manifest>
