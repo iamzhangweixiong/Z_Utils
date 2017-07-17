@@ -5,6 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.zhangwx.z_utils.MyApplication;
+import com.zhangwx.z_utils.Z_DB.preference.PreferenceTable;
 
 /**
  * Created by zhangwx on 2017/4/17.
@@ -35,6 +36,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         UserInfoTable.createTable(db);
+        PreferenceTable.createTable(db);
     }
 
     @Override
