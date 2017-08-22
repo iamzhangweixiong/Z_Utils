@@ -1,9 +1,11 @@
 package com.zhangwx.z_utils.Z_UI;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.graphics.Color;
 import android.os.Build;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 
 import com.zhangwx.z_utils.R;
@@ -35,6 +37,13 @@ public class ActionBarUIFixTool {
                     View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
             activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             // 4.0 以上 5.0 以下状态栏透明
+        }
+    }
+
+    public static void fixDialogFullScreen(Dialog dialog) {
+        final Window window = dialog.getWindow();
+        if (window != null) {
+            window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         }
     }
 }
