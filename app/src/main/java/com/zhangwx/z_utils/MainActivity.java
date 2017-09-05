@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-
 import com.zhangwx.z_utils.Z_DB.DataBaseActivity;
 import com.zhangwx.z_utils.Z_Intent.IntentActivity;
 import com.zhangwx.z_utils.Z_RecycleView.RecycleActivity;
@@ -14,6 +13,7 @@ import com.zhangwx.z_utils.Z_TouchEvent.TouchTestActivity;
 import com.zhangwx.z_utils.Z_UI.ViewUtils;
 import com.zhangwx.z_utils.Z_ViewPager.ViewPagerActivity;
 import com.zhangwx.z_utils.Z_Window.WindowActivity;
+import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
+
         ViewUtils.$(this, R.id.RecycleBtn).setOnClickListener(this);
         ViewUtils.$(this, R.id.ViewPagerBtn).setOnClickListener(this);
         ViewUtils.$(this, R.id.HandlerThreadBtn).setOnClickListener(this);
