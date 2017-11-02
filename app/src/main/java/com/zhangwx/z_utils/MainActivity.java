@@ -13,6 +13,7 @@ import com.zhangwx.z_utils.Z_Thread.HandlerThreadActivity;
 import com.zhangwx.z_utils.Z_TouchEvent.TouchTestActivity;
 import com.zhangwx.z_utils.Z_UI.ViewUtils;
 import com.zhangwx.z_utils.Z_ViewPager.ViewPagerActivity;
+import com.zhangwx.z_utils.Z_Widget.password.PasswordActivity;
 import com.zhangwx.z_utils.Z_Window.WindowActivity;
 import butterknife.ButterKnife;
 
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ViewUtils.$(this, R.id.IntentTestBtn).setOnClickListener(this);
         ViewUtils.$(this, R.id.DataBaseTestBtn).setOnClickListener(this);
         ViewUtils.$(this, R.id.ListTestBtn).setOnClickListener(this);
+        ViewUtils.$(this, R.id.PasswordBtn).setOnClickListener(this);
     }
 
     @Override
@@ -65,6 +67,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.ListTestBtn:
                 intent.setClass(this, ListViewActivity.class);
+                break;
+            case R.id.PasswordBtn:
+                intent.setClass(this, PasswordActivity.class);
                 break;
         }
         startActivity(intent);

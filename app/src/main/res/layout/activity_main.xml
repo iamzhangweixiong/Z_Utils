@@ -1,61 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/RecycleBtn"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:text="RecycleActivity" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/ViewPagerBtn"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:text="ViewPagerActivity" />
+        <Button
+            android:id="@+id/RecycleBtn"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="RecycleActivity" />
 
-    <Button
-        android:id="@+id/HandlerThreadBtn"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:text="HandlerThreadActivity" />
+        <Button
+            android:id="@+id/ViewPagerBtn"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="ViewPagerActivity" />
 
-    <Button
-        android:id="@+id/TouchTestBtn"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:text="TouchTestActivity" />
+        <Button
+            android:id="@+id/HandlerThreadBtn"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="HandlerThreadActivity" />
 
-    <Button
-        android:id="@+id/WindowTestBtn"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:text="WindowActivity" />
+        <Button
+            android:id="@+id/TouchTestBtn"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="TouchTestActivity" />
 
-    <Button
-        android:id="@+id/ReflectTestBtn"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:text="ReflectActivity" />
+        <Button
+            android:id="@+id/WindowTestBtn"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="WindowActivity" />
 
-    <Button
-        android:id="@+id/IntentTestBtn"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:text="IntentActivity" />
+        <Button
+            android:id="@+id/ReflectTestBtn"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="ReflectActivity" />
 
-    <Button
-        android:id="@+id/DataBaseTestBtn"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:text="DataBaseActivity" />
+        <Button
+            android:id="@+id/IntentTestBtn"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="IntentActivity" />
 
-    <Button
-        android:id="@+id/ListTestBtn"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:text="ListActivity" />
+        <Button
+            android:id="@+id/DataBaseTestBtn"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="DataBaseActivity" />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/ListTestBtn"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="ListActivity" />
+
+        <Button
+            android:id="@+id/PasswordBtn"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="PasswordActivity" />
+
+    </LinearLayout>
+</ScrollView>
