@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import com.zhangwx.z_utils.Z_DB.DataBaseActivity;
 import com.zhangwx.z_utils.Z_Intent.IntentActivity;
+import com.zhangwx.z_utils.Z_ListView.ListViewActivity;
 import com.zhangwx.z_utils.Z_RecycleView.RecycleActivity;
 import com.zhangwx.z_utils.Z_Reflect.ReflectActivity;
 import com.zhangwx.z_utils.Z_Thread.HandlerThreadActivity;
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ViewUtils.$(this, R.id.ReflectTestBtn).setOnClickListener(this);
         ViewUtils.$(this, R.id.IntentTestBtn).setOnClickListener(this);
         ViewUtils.$(this, R.id.DataBaseTestBtn).setOnClickListener(this);
+        ViewUtils.$(this, R.id.ListTestBtn).setOnClickListener(this);
     }
 
     @Override
@@ -60,6 +62,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.DataBaseTestBtn:
                 intent.setClass(this, DataBaseActivity.class);
+                break;
+            case R.id.ListTestBtn:
+                intent.setClass(this, ListViewActivity.class);
                 break;
         }
         startActivity(intent);

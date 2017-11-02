@@ -52,4 +52,10 @@
         android:layout_height="56dp"
         android:text="DataBaseActivity" />
 
+    <Button
+        android:id="@+id/ListTestBtn"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="ListActivity" />
+
 </LinearLayout>

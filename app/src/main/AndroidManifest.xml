@@ -37,6 +37,7 @@
             android:excludeFromRecents="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.GuideAlpha" />
+        <activity android:name=".Z_ListView.ListViewActivity" />
 
         <service
             android:name=".Z_Window.WindowService"
