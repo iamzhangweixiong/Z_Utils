@@ -63,10 +63,10 @@
             android:text="ListActivity" />
 
         <Button
-            android:id="@+id/PasswordBtn"
+            android:id="@+id/PatternBtn"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:text="PasswordActivity" />
+            android:text="PatternActivity" />
 
     </LinearLayout>
 </ScrollView>

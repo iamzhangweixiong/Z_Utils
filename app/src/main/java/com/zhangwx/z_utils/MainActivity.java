@@ -13,7 +13,7 @@ import com.zhangwx.z_utils.Z_Thread.HandlerThreadActivity;
 import com.zhangwx.z_utils.Z_TouchEvent.TouchTestActivity;
 import com.zhangwx.z_utils.Z_UI.ViewUtils;
 import com.zhangwx.z_utils.Z_ViewPager.ViewPagerActivity;
-import com.zhangwx.z_utils.Z_Widget.password.PasswordActivity;
+import com.zhangwx.z_utils.Z_Widget.PatternActivity;
 import com.zhangwx.z_utils.Z_Window.WindowActivity;
 import butterknife.ButterKnife;
 
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent.setClass(this, ListViewActivity.class);
                 break;
             case R.id.PasswordBtn:
-                intent.setClass(this, PasswordActivity.class);
+                intent.setClass(this, PatternActivity.class);
                 break;
         }
         startActivity(intent);
