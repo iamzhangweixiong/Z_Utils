@@ -17,6 +17,8 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Interpolator;
 
+import com.zhangwx.z_utils.R;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,12 +41,7 @@ public class LockPatternView extends View {
 	private final Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG | Paint.DITHER_FLAG);
 	private final Paint mPathPaint = new Paint(Paint.ANTI_ALIAS_FLAG | Paint.DITHER_FLAG);
 
-	/**
-	 * How many milliseconds we spend animating each circle of a lock pattern
-	 * if the animating mode is set.  The entire animation should take this
-	 * constant * the length of the pattern to complete.
-	 */
-	private static final int MILLIS_PER_CIRCLE_ANIMATING = 700;
+	private static final int MILLIS_CLEAR_DELAY = 3000;
 
 	/**
 	 * This can be used to avoid updating the display for very small motions or noisy panels.
@@ -53,6 +50,7 @@ public class LockPatternView extends View {
 	private static final float DRAG_THRESHHOLD = 0.0f;
 
 	private OnPatternListener mOnPatternListener;
+	private ClearPatternRunnable mClearPatternRunnable = new ClearPatternRunnable();
 	private final ArrayList<Cell> mPattern = new ArrayList<Cell>(9);
 
 	/**
@@ -87,11 +85,13 @@ public class LockPatternView extends View {
 
 	private int mAspect = ASPECT_LOCK_WIDTH;
 	private int mRegularColor;
+	private int mErrorColor;
 	private int mSuccessColor;
 
 	private final Interpolator mFastOutSlowInInterpolator;
 	private final Interpolator mLinearOutSlowInInterpolator;
 
+	private DisplayMode mPatternDisplayMode = DisplayMode.Correct;
 	/**
 	 * Represents a cell in the 3 X 3 matrix of the unlock pattern view.
 	 */
@@ -207,7 +207,8 @@ public class LockPatternView extends View {
 		final float density = res.getDisplayMetrics().density;
 
 		mRegularColor = color;
-		mSuccessColor = color;
+		mSuccessColor = res.getColor(R.color.colorPrimary);
+		mErrorColor = res.getColor(R.color.colorAccent);
 
 		int pathColor = mRegularColor;
 		mPathPaint.setColor(pathColor);
@@ -442,11 +443,6 @@ public class LockPatternView extends View {
 				addCellToPattern(fillInGapCell);
 			}
 			addCellToPattern(cell);
-//			if (mEnableHapticFeedback) {
-//				performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY,
-//						HapticFeedbackConstants.FLAG_IGNORE_VIEW_SETTING
-//								| HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
-//			}
 			return cell;
 		}
 		return null;
@@ -704,6 +700,7 @@ public class LockPatternView extends View {
 			cancelLineAnimations();
 			notifyPatternDetected();
 			invalidate();
+			postDelayed(mClearPatternRunnable, MILLIS_CLEAR_DELAY);
 		}
 	}
 
@@ -722,6 +719,8 @@ public class LockPatternView extends View {
 
 	private void handleActionDown(MotionEvent event) {
 		resetPattern();
+		removeCallbacks(mClearPatternRunnable);
+		mPatternDisplayMode = DisplayMode.Correct;
 		final float x = event.getX();
 		final float y = event.getY();
 		final Cell hitCell = detectAndAddHit(x, y);
@@ -840,7 +839,11 @@ public class LockPatternView extends View {
 			// unselected circle
 			return mRegularColor;
 		} else {
-			return mSuccessColor;
+			if (mPatternDisplayMode == DisplayMode.Correct) {
+				return mSuccessColor;
+			} else {
+				return mErrorColor;
+			}
 		}
 	}
 
@@ -890,5 +893,34 @@ public class LockPatternView extends View {
 			builder.append((char) n);
 		}
 		return builder.toString();
+	}
+
+	public void drawError() {
+		mPatternDisplayMode = DisplayMode.Wrong;
+		invalidate();
+	}
+
+	/**
+	 * How to display the current pattern.
+	 */
+	public enum DisplayMode {
+
+		/**
+		 * The pattern drawn is correct (i.e draw it in a friendly color)
+		 */
+		Correct,
+
+		/**
+		 * The pattern is wrong (i.e draw a foreboding color)
+		 */
+		Wrong
+	}
+
+	private class ClearPatternRunnable implements Runnable {
+
+		@Override
+		public void run() {
+			clearPattern();
+		}
 	}
 }

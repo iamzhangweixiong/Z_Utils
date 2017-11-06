@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ViewUtils.$(this, R.id.IntentTestBtn).setOnClickListener(this);
         ViewUtils.$(this, R.id.DataBaseTestBtn).setOnClickListener(this);
         ViewUtils.$(this, R.id.ListTestBtn).setOnClickListener(this);
-        ViewUtils.$(this, R.id.PasswordBtn).setOnClickListener(this);
+        ViewUtils.$(this, R.id.PatternBtn).setOnClickListener(this);
     }
 
     @Override
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.ListTestBtn:
                 intent.setClass(this, ListViewActivity.class);
                 break;
-            case R.id.PasswordBtn:
+            case R.id.PatternBtn:
                 intent.setClass(this, PatternActivity.class);
                 break;
         }
