@@ -9,7 +9,7 @@ import android.text.TextUtils;
 import java.util.List;
 
 /**
- * Created by singun on 2017/3/23 0023.
+ * Created by zhangwx on 2017/3/23 0023.
  */
 
 public class SyncConfigFile implements IConfigFile {
