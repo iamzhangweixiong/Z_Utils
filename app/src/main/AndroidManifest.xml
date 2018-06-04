@@ -40,6 +40,7 @@
             android:theme="@style/Theme.GuideAlpha" />
         <activity android:name=".Z_ListView.ListViewActivity" />
         <activity android:name=".Z_Widget.PatternActivity" />
+        <activity android:name=".Z_retrofit.RetrofitTestActivity" />
 
         <service
             android:name=".Z_Window.WindowService"
