@@ -12,7 +12,7 @@ import android.os.Debug;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.android.internal.util.MemInfoReader;
+//import com.android.internal.util.MemInfoReader;
 import com.zhangwx.z_utils.MyApplication;
 
 import java.io.BufferedReader;
@@ -124,26 +124,26 @@ public class ProcessUtils {
      *
      * @return
      */
-    public static int getAvailMem() {
-        MemInfoReader reader = new MemInfoReader();
-        reader.readMemInfo();
-
-        return (int) (reader.getFreeSize() + reader.getCachedSize());
-    }
+//    public static int getAvailMem() {
+//        MemInfoReader reader = new MemInfoReader();
+//        reader.readMemInfo();
+//
+//        return (int) (reader.getFreeSize() + reader.getCachedSize());
+//    }
 
     private static long sTotalMemOfKB = -1;
 
-    public static int getUsedMemoryPercentage() {
-        long totalMemoryKB = getTotalMem();
-        if (totalMemoryKB <= 0)
-            totalMemoryKB = 1024 * 1024 * 1024; // default memory is 1GB
-
-        long availMemKB = getAvailMem() / 1024;
-        long usedMemKB = (totalMemoryKB - availMemKB);
-
-        int percentage = (int) (usedMemKB * 100 / totalMemoryKB);
-        return percentage;
-    }
+//    public static int getUsedMemoryPercentage() {
+//        long totalMemoryKB = getTotalMem();
+//        if (totalMemoryKB <= 0)
+//            totalMemoryKB = 1024 * 1024 * 1024; // default memory is 1GB
+//
+//        long availMemKB = getAvailMem() / 1024;
+//        long usedMemKB = (totalMemoryKB - availMemKB);
+//
+//        int percentage = (int) (usedMemKB * 100 / totalMemoryKB);
+//        return percentage;
+//    }
 
 
     //把 所有 关联的PID 的内存值加起来
