@@ -11,5 +11,5 @@ public interface ApkloadInterface {
 
     @Streaming
     @GET
-    Observable<Response<ResponseBody>> downloadFile(@Url String fileUrl);
+    Observable<ResponseBody> downloadApk(@Url String url);
 }
