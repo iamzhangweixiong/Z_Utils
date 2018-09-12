@@ -3,15 +3,20 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 25
+    compileSdkVersion 26
     buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "com.zhangwx.z_utils"
         minSdkVersion 14
-        targetSdkVersion 25
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath false
+            }
+        }
     }
     buildTypes {
         release {
@@ -26,7 +31,7 @@ String SDK_DIR = System.getenv("ANDROID_HOME")
 if (SDK_DIR == null) {
     Properties props = new Properties()
     props.load(new FileInputStream(project.rootProject.file("local.properties")))
-    SDK_DIR = props.get('sdk.dir');
+    SDK_DIR = props.get('sdk.dir')
 }
 
 dependencies {
@@ -34,8 +39,8 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:design:25.3.1'
-    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:design:26.1.0'
+    compile 'com.android.support:appcompat-v7:26.1.0'
     compile 'com.facebook.stetho:stetho:1.4.2'
     compile 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
@@ -49,6 +54,7 @@ dependencies {
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
     implementation 'io.reactivex.rxjava2:rxjava:2.1.16'
+    implementation project(': annotation')
 }
 repositories {
     mavenCentral()

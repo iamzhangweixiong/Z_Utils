@@ -7,6 +7,7 @@ import android.widget.TextView
 import android.widget.Toast
 import com.zhangwx.z_utils.R
 import com.zhangwx.z_utils.Z_Widget.password.LockPatternView
+import kotlinx.android.synthetic.main.activity_password.*
 
 /**
  * Created by zhangweixiong on 2017/11/3.
@@ -14,9 +15,6 @@ import com.zhangwx.z_utils.Z_Widget.password.LockPatternView
 
 class PatternActivity : FragmentActivity() {
 
-    private var mPatternView: LockPatternView? = null
-    private var mLockImage: ImageView? = null
-    private var mLockTips: TextView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,11 +23,7 @@ class PatternActivity : FragmentActivity() {
     }
 
     private fun initView() {
-        mLockImage = findViewById(R.id.lock_img) as ImageView
-        mLockTips = findViewById(R.id.lock_tips) as TextView
-        mPatternView = findViewById(R.id.patternView) as LockPatternView
-
-        mPatternView?.setOnPatternListener(object : LockPatternView.OnPatternListener {
+        patternView.setOnPatternListener(object : LockPatternView.OnPatternListener {
             override fun onPatternStart() {}
 
             override fun onPatternCleared() {}
@@ -39,7 +33,7 @@ class PatternActivity : FragmentActivity() {
             override fun onPatternDetected(pattern: MutableList<LockPatternView.Cell>?) {
                 val length = pattern?.size ?: return
                 if (length < 4) {
-                    mPatternView?.drawError()
+                    patternView.drawError()
                     Toast.makeText(this@PatternActivity, "must be > 4", Toast.LENGTH_SHORT).show()
                     return
                 }

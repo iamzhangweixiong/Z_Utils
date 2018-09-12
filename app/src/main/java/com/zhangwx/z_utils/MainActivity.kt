@@ -7,6 +7,7 @@ import android.view.View
 import com.zhangwx.z_utils.Z_DB.DataBaseActivity
 import com.zhangwx.z_utils.Z_Intent.IntentActivity
 import com.zhangwx.z_utils.Z_ListView.ListViewActivity
+import com.zhangwx.z_utils.Z_Processor.ProcessorActivity
 import com.zhangwx.z_utils.Z_RecycleView.RecycleActivity
 import com.zhangwx.z_utils.Z_Reflect.ReflectActivity
 import com.zhangwx.z_utils.Z_Thread.HandlerThreadActivity
@@ -33,6 +34,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         ListTestBtn.setOnClickListener(this)
         PatternBtn.setOnClickListener(this)
         RetrofitBtn.setOnClickListener(this)
+        ProcessorBtn.setOnClickListener(this)
     }
 
     override fun onClick(view: View) {
@@ -49,6 +51,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.ListTestBtn -> intent.setClass(this, ListViewActivity::class.java)
             R.id.PatternBtn -> intent.setClass(this, PatternActivity::class.java)
             R.id.RetrofitBtn -> intent.setClass(this, RetrofitTestActivity::class.java)
+            R.id.ProcessorBtn -> intent.setClass(this, ProcessorActivity::class.java)
         }
         startActivity(intent)
     }
