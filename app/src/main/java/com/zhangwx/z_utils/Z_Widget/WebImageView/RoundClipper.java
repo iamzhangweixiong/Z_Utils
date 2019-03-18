@@ -8,6 +8,7 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
 import android.graphics.Xfermode;
+import android.os.Build;
 
 
 public class RoundClipper {
@@ -24,13 +25,15 @@ public class RoundClipper {
 	}
 
 	public void beginClip(Canvas canvas, RectF bounds, Paint paint, float radius) {
-		mSavedCount = canvas.saveLayer(bounds.left, bounds.top, bounds.right, bounds.bottom, null, Canvas.HAS_ALPHA_LAYER_SAVE_FLAG);
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+			mSavedCount = canvas.saveLayer(bounds.left, bounds.top, bounds.right, bounds.bottom, null);
+		}
 		mSavedFlags = paint.getFlags();
 		mSavedFilter = canvas.getDrawFilter();
 		mSavedXfermode = paint.getXfermode();
 		canvas.setDrawFilter(mDrawFilter);
 
-		canvas.save(Canvas.CLIP_SAVE_FLAG);
+//		canvas.save(Canvas.ALL_SAVE_FLAG);
 		canvas.clipRect(bounds);
 		if (mCircle)
 			canvas.drawCircle(bounds.centerX(), bounds.centerY(), radius, paint);
