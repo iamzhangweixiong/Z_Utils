@@ -2,6 +2,8 @@ package com.zhangwx.z_utils;
 
 import android.app.Application;
 import android.content.Context;
+import android.support.multidex.MultiDex;
+import android.support.multidex.MultiDexApplication;
 
 import com.facebook.stetho.Stetho;
 import com.squareup.leakcanary.LeakCanary;
@@ -16,11 +18,17 @@ import com.squareup.leakcanary.LeakCanary;
  * Created by zhangwx on 2016/7/13.
  */
 
-public class MyApplication extends Application {
+public class MyApplication extends MultiDexApplication {
     private static Context context;
 
     public static Context getContext() {
         return context;
+    }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(base);
     }
 
     @Override

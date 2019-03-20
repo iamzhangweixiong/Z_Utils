@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.zhangwx.z_utils.R;
+import com.zhangwx.z_utils.Z_DB.datedb.CorpusTestDBHelper;
+import com.zhangwx.z_utils.Z_Pub.DateUtils;
 import com.zhangwx.z_utils.Z_UI.ViewUtils;
 
 import java.util.ArrayList;
@@ -48,17 +50,23 @@ public class DataBaseActivity extends Activity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.db_add:
-                actionAdd();
+//                actionAdd();
+                CorpusTestDBHelper.insert("vfvsfdvdsf......。。。。。 && %% $$ (())@ !|||///// vsdfvdfsv");
+
                 break;
             case R.id.db_delete:
-                actionDelete();
+//                actionDelete();
+                CorpusTestDBHelper.delete(DateUtils.getMinuteBeforeCurrent(1));
                 break;
             case R.id.db_update:
-                actionUpdate();
+//                actionUpdate();
                 break;
             case R.id.db_query:
 //                actionQuery();
-                providerQuery();
+//                providerQuery();
+                mDataList.clear();
+                mDataList.addAll(CorpusTestDBHelper.query());
+                mDbAdapter.notifyDataSetChanged();
                 break;
         }
     }

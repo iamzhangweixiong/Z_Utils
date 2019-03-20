@@ -9,6 +9,7 @@ android {
         applicationId "com.zhangwx.z_utils"
         minSdkVersion 14
         targetSdkVersion 26
+        multiDexEnabled true
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -60,8 +61,9 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:3.10.0'
     implementation 'com.squareup.retrofit2:retrofit:2.4.0'
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
     implementation 'io.reactivex.rxjava2:rxjava:2.1.16'
+    implementation 'com.tencent.wcdb:wcdb-android:1.0.0'
     implementation project(': annotation')
 }
 repositories {

@@ -13,7 +13,7 @@ public class PreferenceTable implements BaseColumns {
 
     public static final String COLUMN_ID = _ID;
     public static final String COLUMN_TYPE = "type";
-    public static final String COLUMN_KEY = "key";
+    public static final String COLUMN_KEY = "_key";
     public static final String COLUMN_VALUE = "value";
 
     private static final String CREATE_TABLE = "CREATE TABLE " + TABLE_PREFERENCE + "(" +

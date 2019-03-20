@@ -65,6 +65,9 @@
         <provider
             android:name=".Z_DB.UserInfoContentProvider"
             android:authorities="${applicationId}.provider" />
+        <provider
+            android:name=".Z_DB.datedb.CorpusTestProvider"
+            android:authorities="${applicationId}.ULCorpusProvider" />
 
     </application>
 
