@@ -1,12 +1,13 @@
 package com.zhangwx.z_utils.Z_DB.file;
 
 import com.zhangwx.z_utils.MyApplication;
-
+import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.nio.channels.FileLock;
 import java.util.List;
 
@@ -48,22 +49,31 @@ public class FileCache {
         return bReturn;
     }
 
-    public static synchronized String readFile() throws IOException {
-        File file = new File(cachePath + FILE_NAME);
+    public static String readFile() throws IOException {
+        final File file = new File(cachePath + FILE_NAME);
         if (file.exists()) {
-            FileInputStream inputStream = new FileInputStream(file);
-            int len = inputStream.available();
-            if (len > MAX_FILE_LEN) {
-                len = MAX_FILE_LEN;
-            }
+            final FileInputStream inputStream = new FileInputStream(file);
 
-            byte[] bytes = new byte[len];
-            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-            while (inputStream.read(bytes) != -1) {
-                outputStream.write(bytes);
+//            int len = inputStream.available();
+//            if (len > MAX_FILE_LEN) {
+//                len = MAX_FILE_LEN;
+//            }
+//            用流读取会把换行符等读取出来
+//            byte[] bytes = new byte[len];
+//            final ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+//            while (inputStream.read(bytes) != -1) {
+//                outputStream.write(bytes);
+//            }
+//            inputStream.close();
+//            return outputStream.toString();
+
+            final StringBuilder builder = new StringBuilder();
+            final BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                builder.append(line);// 需要自己加上换行符
             }
-            inputStream.close();
-            return outputStream.toString();
+            return builder.toString();
         }
         return null;
     }
