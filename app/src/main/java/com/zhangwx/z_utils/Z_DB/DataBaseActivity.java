@@ -14,9 +14,11 @@ import android.widget.TextView;
 
 import com.zhangwx.z_utils.R;
 import com.zhangwx.z_utils.Z_DB.datedb.CorpusTestDBHelper;
-import com.zhangwx.z_utils.Z_Pub.DateUtils;
+import com.zhangwx.z_utils.Z_DB.file.FileCache;
+import com.zhangwx.z_utils.Z_Utils.DateUtils;
 import com.zhangwx.z_utils.Z_UI.ViewUtils;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,22 +53,31 @@ public class DataBaseActivity extends Activity implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.db_add:
 //                actionAdd();
-                CorpusTestDBHelper.insert("vfvsfdvdsf......。。。。。 && %% $$ (())@ !|||///// vsdfvdfsv");
-
+//                CorpusTestDBHelper.insert("vfvsfdvdsf......。。。。。 && %% $$ (())@ !|||///// vsdfvdfsv");
+//                try {
+//                    FileCache.writeToFile(content);
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
                 break;
             case R.id.db_delete:
 //                actionDelete();
-                CorpusTestDBHelper.delete(DateUtils.getMinuteBeforeCurrent(1));
+//                CorpusTestDBHelper.delete(DateUtils.getMinuteBeforeCurrent(1));
                 break;
             case R.id.db_update:
 //                actionUpdate();
                 break;
             case R.id.db_query:
+                mDataList.clear();
 //                actionQuery();
 //                providerQuery();
-                mDataList.clear();
-                mDataList.addAll(CorpusTestDBHelper.query());
-                mDbAdapter.notifyDataSetChanged();
+//                mDataList.addAll(CorpusTestDBHelper.query());
+                try {
+                    mDataList.add(FileCache.readFile());
+                    mDbAdapter.notifyDataSetChanged();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 break;
         }
     }
