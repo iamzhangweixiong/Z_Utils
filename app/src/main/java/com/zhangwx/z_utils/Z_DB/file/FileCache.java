@@ -54,26 +54,26 @@ public class FileCache {
         if (file.exists()) {
             final FileInputStream inputStream = new FileInputStream(file);
 
-//            int len = inputStream.available();
-//            if (len > MAX_FILE_LEN) {
-//                len = MAX_FILE_LEN;
-//            }
-//            用流读取会把换行符等读取出来
-//            byte[] bytes = new byte[len];
-//            final ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-//            while (inputStream.read(bytes) != -1) {
-//                outputStream.write(bytes);
-//            }
-//            inputStream.close();
-//            return outputStream.toString();
-
-            final StringBuilder builder = new StringBuilder();
-            final BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-            String line;
-            while ((line = reader.readLine()) != null) {
-                builder.append(line);// 需要自己加上换行符
+            int len = inputStream.available();
+            if (len > MAX_FILE_LEN) {
+                len = MAX_FILE_LEN;
             }
-            return builder.toString();
+//            用流读取会把换行符等读取出来
+            byte[] bytes = new byte[len];
+            final ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+            while (inputStream.read(bytes) != -1) {
+                outputStream.write(bytes);
+            }
+            inputStream.close();
+            return outputStream.toString();
+
+//            final StringBuilder builder = new StringBuilder();
+//            final BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+//            String line;
+//            while ((line = reader.readLine()) != null) {
+//                builder.append(line);// 需要自己加上换行符
+//            }
+//            return builder.toString();
         }
         return null;
     }
