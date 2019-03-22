@@ -80,7 +80,7 @@ class ApkLoadService : IntentService("DownLoadApk") {
 
         val fileSize = body.contentLength()
         val bis = BufferedInputStream(body.byteStream(), 1024 * 8)
-        val outputFile = File(getExternalStoragePublicDirectory(DIRECTORY_DOWNLOADS), "dappbrowser_update.apk")
+        val outputFile = File(getExternalStoragePublicDirectory(DIRECTORY_DOWNLOADS), "update.apk")
         val output = FileOutputStream(outputFile)
         val startTime = System.currentTimeMillis()
         var total: Long = 0
