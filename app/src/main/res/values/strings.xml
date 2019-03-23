@@ -2,6 +2,7 @@
     <string name="app_name">Z_Utils</string>
     <string name="recy">已扫描完成 &lt;font color=#149e5c &gt;%1$d&lt;/font&gt; 个应用</string>
     <string name="add">add</string>
+    <string name="free">FREE</string>
     <string name="delete">delete</string>
     <string name="update">update</string>
     <string name="query">query</string>

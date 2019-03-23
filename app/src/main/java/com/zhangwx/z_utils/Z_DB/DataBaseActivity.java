@@ -5,6 +5,7 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 import com.zhangwx.z_utils.R;
 import com.zhangwx.z_utils.Z_DB.datedb.CorpusTestDBHelper;
 import com.zhangwx.z_utils.Z_DB.file.FileCache;
+import com.zhangwx.z_utils.Z_DB.file.FilePath;
 import com.zhangwx.z_utils.Z_Utils.DateUtils;
 import com.zhangwx.z_utils.Z_UI.ViewUtils;
 
@@ -41,6 +43,7 @@ public class DataBaseActivity extends Activity implements View.OnClickListener {
         ViewUtils.$(this, R.id.db_delete).setOnClickListener(this);
         ViewUtils.$(this, R.id.db_update).setOnClickListener(this);
         ViewUtils.$(this, R.id.db_query).setOnClickListener(this);
+        ViewUtils.$(this, R.id.freeAction).setOnClickListener(this);
         mRecyclerView = ViewUtils.$(this, R.id.DBDataList);
         mDbAdapter = new DBAdapter();
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -51,6 +54,11 @@ public class DataBaseActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.freeAction:
+                mDataList.clear();
+                mDataList.addAll(FilePath.getAllFilePath(this));
+                mDbAdapter.notifyDataSetChanged();
+                break;
             case R.id.db_add:
 //                actionAdd();
 //                CorpusTestDBHelper.insert("vfvsfdvdsf......。。。。。 && %% $$ (())@ !|||///// vsdfvdfsv");

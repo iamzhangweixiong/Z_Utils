@@ -22,7 +22,18 @@ public class CloseUtil {
         }
     }
 
+    public static <T extends Closeable> void safeClose(T closeable) {
+        try {
+            if (closeable != null) {
+                closeable.close();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     ////////////////////////////////////////////////////////////////////////////////
+
     /**
      * 注意，以下方法是为了兼容4.0以下版本。因为4.0以下版本没有实现Closeable
      */
