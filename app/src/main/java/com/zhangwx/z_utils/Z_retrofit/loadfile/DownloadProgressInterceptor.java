@@ -1,5 +1,7 @@
 package com.zhangwx.z_utils.Z_retrofit.loadfile;
 
+import com.zhangwx.z_utils.Z_retrofit.DownLoadProgressListener;
+
 import java.io.IOException;
 import okhttp3.Interceptor;
 import okhttp3.MediaType;
@@ -12,9 +14,9 @@ import okio.Okio;
 import okio.Source;
 
 public class DownloadProgressInterceptor implements Interceptor {
-    private DownloadProgressListener progressListener;
+    private DownLoadProgressListener progressListener;
 
-    public DownloadProgressInterceptor(DownloadProgressListener progressListener) {
+    public DownloadProgressInterceptor(DownLoadProgressListener progressListener) {
         this.progressListener = progressListener;
     }
 
@@ -29,11 +31,11 @@ public class DownloadProgressInterceptor implements Interceptor {
     private static class DownloadProgressResponseBody extends ResponseBody {
 
         private final ResponseBody responseBody;
-        private final DownloadProgressListener progressListener;
+        private final DownLoadProgressListener progressListener;
         private BufferedSource bufferedSource;
 
         public DownloadProgressResponseBody(ResponseBody responseBody,
-                                            DownloadProgressListener progressListener) {
+                                            DownLoadProgressListener progressListener) {
             this.responseBody = responseBody;
             this.progressListener = progressListener;
         }
@@ -73,9 +75,5 @@ public class DownloadProgressInterceptor implements Interceptor {
                 }
             };
         }
-    }
-
-    public interface DownloadProgressListener {
-        void update(long bytesRead, long contentLength, boolean done);
     }
 }

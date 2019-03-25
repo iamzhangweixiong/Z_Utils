@@ -20,6 +20,7 @@ import android.app.NotificationManager
 import android.content.Context
 import android.support.v4.app.NotificationCompat
 import com.zhangwx.z_utils.R
+import com.zhangwx.z_utils.Z_retrofit.DownLoadProgressListener
 
 class ApkLoadService : IntentService("DownLoadApk") {
 
@@ -44,7 +45,7 @@ class ApkLoadService : IntentService("DownLoadApk") {
     private var okHttpClient = OkHttpClient
             .Builder()
             .addInterceptor(DownloadProgressInterceptor(
-                    DownloadProgressInterceptor.DownloadProgressListener { bytesRead, contentLength, done ->
+                    DownLoadProgressListener { bytesRead, contentLength, done ->
                         Log.e("zhang", "bytesRead = $bytesRead   contentLength = $contentLength   done = $done")
 //                        val download = DownLoadInfo()
 //                        download.totalFileSize = 15000000

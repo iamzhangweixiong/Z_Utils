@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.channels.FileLock;
 import java.util.List;
+import java.util.zip.CRC32;
 
 public class FileCache {
 
