@@ -4,8 +4,11 @@ import android.text.TextUtils;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStream;
+import java.security.DigestInputStream;
 import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 /**
  * Created by zhangwx on 2016/9/5.
@@ -71,6 +74,29 @@ public class MD5Utils {
             return null;
         }
         return encodeHexStandard(digest.digest());
+    }
+
+    public static String getFileMd5(File file) {
+        FileInputStream fis = null;
+        DigestInputStream dis = null;
+
+        try {
+            MessageDigest messageDigest = MessageDigest.getInstance("MD5");
+            fis = new FileInputStream(file);
+            dis = new DigestInputStream(fis, messageDigest);
+
+            byte[] buffer = new byte[1024];
+            //DigestInputStream 实际上在流处理文件时就在内部就进行了一定的处理
+            while (dis.read(buffer) > 0) ;
+
+            return encodeHex(dis.getMessageDigest().digest());
+        } catch (IOException | NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        } finally {
+            CloseUtil.close(fis);
+            CloseUtil.close(dis);
+        }
+        return null;
     }
 
     public static String getPackageNameMd5(String packageName) {
@@ -176,7 +202,7 @@ public class MD5Utils {
         int len = data.length;
         StringBuilder hex = new StringBuilder(len * 2);
 
-        for(int i = 0; i < len; ++i) {
+        for (int i = 0; i < len; ++i) {
 
             hex.append(HEXES.charAt((data[i] & 0xF0) >>> 4));
             hex.append(HEXES.charAt((data[i] & 0x0F)));
