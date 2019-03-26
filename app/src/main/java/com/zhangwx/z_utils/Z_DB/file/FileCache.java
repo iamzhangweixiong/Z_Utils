@@ -1,16 +1,22 @@
 package com.zhangwx.z_utils.Z_DB.file;
 
 import com.zhangwx.z_utils.MyApplication;
+
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.channels.FileLock;
 import java.util.List;
 import java.util.zip.CRC32;
+
+import okio.BufferedSink;
+import okio.BufferedSource;
+import okio.Okio;
 
 public class FileCache {
 
@@ -75,6 +81,37 @@ public class FileCache {
 //                builder.append(line);// 需要自己加上换行符
 //            }
 //            return builder.toString();
+        }
+        return null;
+    }
+
+    public static boolean writeToFileOkio(List<String> content) throws IOException {
+        final File path = new File(cachePath);
+        if (!path.exists()) {
+            path.mkdirs();
+        }
+        final File file = new File(path.getPath() + File.separator + FILE_NAME);
+        if (!file.exists()) {
+            boolean created = file.createNewFile();
+            if (!created) {
+                return false;
+            }
+        }
+
+        BufferedSink bufferedSink = Okio.buffer(Okio.appendingSink(file));
+        for (String s : content) {
+            bufferedSink.write(s.getBytes(), 0, s.length());
+            bufferedSink.write(RETURN);
+        }
+        bufferedSink.flush();
+        return true;
+    }
+
+    public static String readFileOkio() throws IOException {
+        final File file = new File(cachePath + FILE_NAME);
+        if (file.exists()) {
+            BufferedSource bufferedSource = Okio.buffer(Okio.source(file));
+            return bufferedSource.readUtf8();
         }
         return null;
     }
