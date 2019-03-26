@@ -29,6 +29,17 @@ public class MemoryUtils {
         return msg;
     }
 
+    public void getMemoryInfo(Context context) {
+        final ActivityManager am = (ActivityManager)context.getSystemService(Context.ACTIVITY_SERVICE);
+        am.getMemoryClass();// 应用分配的最大内存
+        am.getLargeMemoryClass();// 声明 LargeHeap 之后分配的最大内存
+
+        final Runtime runtime = Runtime.getRuntime();
+        runtime.maxMemory();// 应用分配的最大内存
+        runtime.freeMemory();// 当前空闲的内存，一般不会很大，1-2M左右，因为内存分配是当需要的时候才分配
+        runtime.totalMemory();// 当前使用了多少内存
+    }
+
     public static void trimMemory() {
 //        try {
 //            if (Build.VERSION.SDK_INT >= 21) {
