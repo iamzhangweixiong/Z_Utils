@@ -1,13 +1,16 @@
 package com.zhangwx.z_utils.Z_retrofit.Range;
 
 import android.util.Log;
+
 import com.zhangwx.z_utils.MyApplication;
 import com.zhangwx.z_utils.Z_Utils.CloseUtil;
+
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.RandomAccessFile;
+
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;
@@ -38,8 +41,8 @@ public class RangeDownLoad {
 
         call.enqueue(new Callback() {
             @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                final long length = request.body().contentLength();
+            public void onResponse(Call call, Response response) {
+                final long length = response.body().contentLength();
 
                 if (length == 0) {
                     Log.d(TAG, "Load Completed");

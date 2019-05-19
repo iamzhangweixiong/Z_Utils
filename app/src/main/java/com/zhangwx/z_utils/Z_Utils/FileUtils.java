@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.nio.channels.FileChannel;
 import java.security.DigestInputStream;
 import java.security.MessageDigest;
 import java.util.ArrayList;
@@ -35,6 +36,10 @@ import static android.os.Environment.isExternalStorageEmulated;
  * Created by zhangwx on 2016/8/24.
  */
 public class FileUtils {
+
+    // Arbitrary. Probably good if it's a power of 2, and a couple thousand bytes long.
+    private static final int FILE_COPY_BUFFER_SIZE = 8192;
+
     // 解压并校验解压后的entry的md5值
     public static boolean unzip(String srcPath, String dstPath, String md5) {
         boolean succeeded = false;
@@ -1433,6 +1438,47 @@ public class FileUtils {
             }
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    /**
+     * Copies in to out using FileChannels.
+     * <p>
+     * This tries to use channels for fast copying. If it doesn't work, fall back to
+     * copyFileFallBack below.
+     *
+     * @param in  the stream to copy from.
+     * @param out the stream to copy to.
+     * @throws IOException if both the normal and fallback methods raise exceptions.
+     */
+    private static void copyFile(final InputStream in, final OutputStream out)
+            throws IOException {
+        if (!(in instanceof FileInputStream) || !(out instanceof FileOutputStream)) {
+            copyFileFallback(in, out);
+        } else {
+            try {
+                final FileChannel sourceChannel = ((FileInputStream) in).getChannel();
+                final FileChannel destinationChannel = ((FileOutputStream) out).getChannel();
+                sourceChannel.transferTo(0, Integer.MAX_VALUE, destinationChannel);
+            } catch (IOException e) {
+                // Can't work with channels, or something went wrong. Copy by hand.
+                copyFileFallback(in, out);
+            }
+        }
+    }
+
+    /**
+     * Copies in to out with read/write methods, not FileChannels.
+     *
+     * @param in  the stream to copy from.
+     * @param out the stream to copy to.
+     * @throws IOException if a read or a write fails.
+     */
+    private static void copyFileFallback(final InputStream in, final OutputStream out)
+            throws IOException {
+        final byte[] buffer = new byte[FILE_COPY_BUFFER_SIZE];
+        for (int readBytes = in.read(buffer); readBytes >= 0; readBytes = in.read(buffer)) {
+            out.write(buffer, 0, readBytes);
         }
     }
 }

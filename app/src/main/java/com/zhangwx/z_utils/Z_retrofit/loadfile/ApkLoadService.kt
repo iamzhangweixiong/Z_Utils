@@ -1,5 +1,6 @@
 package com.zhangwx.z_utils.Z_retrofit.loadfile
 
+import android.annotation.SuppressLint
 import android.app.IntentService
 import android.content.Intent
 import com.google.gson.GsonBuilder
@@ -62,6 +63,7 @@ class ApkLoadService : IntentService("DownLoadApk") {
             .addConverterFactory(GsonConverterFactory.create(GsonBuilder().setLenient().create()))
             .build()
 
+    @SuppressLint("CheckResult")
     fun loadApk() {
         retrofit
                 .create(ApkloadInterface::class.java)

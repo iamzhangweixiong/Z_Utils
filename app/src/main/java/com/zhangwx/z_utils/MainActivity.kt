@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.DataBaseTestBtn -> intent.setClass(this, DataBaseActivity::class.java)
             R.id.ListTestBtn -> intent.setClass(this, ListViewActivity::class.java)
             R.id.PatternBtn -> intent.setClass(this, PatternActivity::class.java)
-            R.id.RetrofitBtn -> intent.setClass(this, ProcessorActivity::class.java)
+            R.id.RetrofitBtn -> intent.setClass(this, RetrofitTestActivity::class.java)
             R.id.ProcessorBtn -> intent.setClass(this, ProcessorActivity::class.java)
         }
         startActivity(intent)

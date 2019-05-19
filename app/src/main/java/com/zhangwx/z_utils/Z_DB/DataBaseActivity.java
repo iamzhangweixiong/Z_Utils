@@ -62,11 +62,18 @@ public class DataBaseActivity extends Activity implements View.OnClickListener {
             case R.id.db_add:
 //                actionAdd();
 //                CorpusTestDBHelper.insert("vfvsfdvdsf......。。。。。 && %% $$ (())@ !|||///// vsdfvdfsv");
-//                try {
-//                    FileCache.writeToFile(content);
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
+
+                List<String> content = new ArrayList<>();
+                content.add("--vadfv00afvfv--");
+                content.add("--vadfvafdv--");
+                content.add("--vadfvfdv--");
+                content.add("--vadvfdv--");
+                content.add("--vfv00fdv--");
+                try {
+                    FileCache.writeToFileOkio(content);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 break;
             case R.id.db_delete:
 //                actionDelete();
@@ -81,7 +88,7 @@ public class DataBaseActivity extends Activity implements View.OnClickListener {
 //                providerQuery();
 //                mDataList.addAll(CorpusTestDBHelper.query());
                 try {
-                    mDataList.add(FileCache.readFile());
+                    mDataList.add(FileCache.readFileOkio());
                     mDbAdapter.notifyDataSetChanged();
                 } catch (IOException e) {
                     e.printStackTrace();

@@ -21,9 +21,9 @@ import okio.Okio;
 public class FileCache {
 
     private static final int MAX_FILE_LEN = 1024;
-    private static final byte[] RETURN = "\n".getBytes();
+    private static final byte[] RETURN = "\r\n".getBytes();
     private static final String FILE_PATH = "zCacheFile";
-    private static final String FILE_NAME = "corpus.txt";
+    private static final String FILE_NAME = "corpus";
     private static final String cachePath = MyApplication.getContext().getFilesDir() + File.separator
             + FILE_PATH + File.separator;
 
@@ -98,7 +98,7 @@ public class FileCache {
             }
         }
 
-        BufferedSink bufferedSink = Okio.buffer(Okio.appendingSink(file));
+        final BufferedSink bufferedSink = Okio.buffer(Okio.appendingSink(file));
         for (String s : content) {
             bufferedSink.write(s.getBytes(), 0, s.length());
             bufferedSink.write(RETURN);
@@ -110,7 +110,7 @@ public class FileCache {
     public static String readFileOkio() throws IOException {
         final File file = new File(cachePath + FILE_NAME);
         if (file.exists()) {
-            BufferedSource bufferedSource = Okio.buffer(Okio.source(file));
+            final BufferedSource bufferedSource = Okio.buffer(Okio.source(file));
             return bufferedSource.readUtf8();
         }
         return null;
