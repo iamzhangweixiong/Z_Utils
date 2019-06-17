@@ -47,6 +47,10 @@
         <activity android:name=".Z_retrofit.RetrofitTestActivity" />
         <activity android:name=".Z_Processor.ProcessorActivity" />
 
+        <activity
+            android:name=".Z_Components.ComponentsActivity"
+            android:launchMode="singleInstance" />
+
         <service
             android:name=".Z_Window.WindowService"
             android:process=":locker" />

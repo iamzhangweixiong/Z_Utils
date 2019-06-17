@@ -34,7 +34,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
-                app:popupTheme="@style/AppTheme.PopupOverlay"/>
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
 
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
@@ -48,6 +48,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
+            <Button
+                android:id="@+id/ComponentsBtn"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="ComponentsActivity" />
 
             <Button
                 android:id="@+id/RecycleBtn"
@@ -120,7 +126,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:text="ProcessorActivity" />
-
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 </android.support.design.widget.CoordinatorLayout>

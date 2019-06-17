@@ -56,12 +56,9 @@ public class IntentActivity extends Activity implements View.OnClickListener {
                 Intent intent = getNotificationServiceSettingIntent();//跳转通知栏权限页
                 startActivity(intent);
 
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        Intent intent1 = new Intent(getApplication(), NotificationActivity.class);
-                        startActivity(intent1);
-                    }
+                new Handler().postDelayed(() -> {
+                    Intent intent1 = new Intent(getApplication(), NotificationActivity.class);
+                    startActivity(intent1);
                 }, 500);
 
                 break;
