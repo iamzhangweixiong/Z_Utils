@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 // 和为K的子数组
-public class AubArraySum {
+public class SubArraySum {
 
     int[] data = new int[]{1, 2, 3, 4, 5, 6, 7, 3, 1};
 

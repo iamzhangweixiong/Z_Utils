@@ -2,6 +2,7 @@ package com.zhangwx.z_utils;
 
 import android.util.Log;
 
+import com.zhangwx.z_utils.algorithm.ArrayPairSum;
 import com.zhangwx.z_utils.algorithm.MaxDepth;
 
 import org.junit.Test;
@@ -22,8 +23,13 @@ public class ExampleUnitTest {
 
 //        MaxDepth max = new MaxDepth();
 //        System.out.println(max.maxDepth(max.genNode()));
+//
+//        ArrayPairSum sum = new ArrayPairSum();
+//        System.out.println(sum.getMaxPairValue());
 
-//        System.out.println(reverseWords2());
+        int a = 0;
+        System.out.println(a << 2 | 1);
+
 
     }
 }
