@@ -4,6 +4,7 @@ import android.util.Log;
 
 import com.zhangwx.z_utils.algorithm.ArrayPairSum;
 import com.zhangwx.z_utils.algorithm.MaxDepth;
+import com.zhangwx.z_utils.algorithm.YangHuiTriangle;
 
 import org.junit.Test;
 
@@ -27,8 +28,11 @@ public class ExampleUnitTest {
 //        ArrayPairSum sum = new ArrayPairSum();
 //        System.out.println(sum.getMaxPairValue());
 
-        int a = 0;
-        System.out.println(a << 2 | 1);
+//        int a = 0;
+//        System.out.println(a << 2 | 1);
+
+        YangHuiTriangle yangHuiTriangle = new YangHuiTriangle();
+        System.out.println(yangHuiTriangle.generate(5));
 
 
     }
