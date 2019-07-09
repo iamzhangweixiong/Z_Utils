@@ -16,7 +16,7 @@ import com.zhangwx.z_utils.Z_UI.DimenUtils;
 /**
  * Created by zhangwx on 2017/1/5.
  */
-public class PullFrameLayout extends FrameLayout {
+public class PullFrameLayout extends FrameLayout implements View.OnTouchListener {
 
     public static final String TAG = "Zhang";
     private float mStartY;
@@ -41,6 +41,32 @@ public class PullFrameLayout extends FrameLayout {
 
     private void init(Context context) {
         mScreenHeight = DimenUtils.getWindowHeight();
+        setOnTouchListener(this);
+    }
+
+    @Override
+    public boolean onInterceptTouchEvent(MotionEvent ev) {
+        return super.onInterceptTouchEvent(ev);
+
+    }
+
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        return false;
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        int action = ev.getActionMasked();
+        if (action == MotionEvent.ACTION_DOWN) {
+            mStartY = ev.getRawY();
+        } else if (action == MotionEvent.ACTION_MOVE) {
+            float dis = ev.getRawY() - mStartY;
+            if (dis > ViewConfiguration.get(getContext()).getScaledTouchSlop()) {
+                return true;
+            }
+        }
+        return super.onInterceptTouchEvent(ev);
     }
 
     @Override
@@ -68,20 +94,6 @@ public class PullFrameLayout extends FrameLayout {
                 return true;
         }
         return super.onTouchEvent(event);
-    }
-
-    @Override
-    public boolean dispatchTouchEvent(MotionEvent ev) {
-        int action = ev.getActionMasked();
-        if (action == MotionEvent.ACTION_DOWN) {
-            mStartY = ev.getRawY();
-        } else if (action == MotionEvent.ACTION_MOVE) {
-            float dis = ev.getRawY() - mStartY;
-            if (dis > ViewConfiguration.get(getContext()).getScaledTouchSlop()) {
-                return true;
-            }
-        }
-        return super.onInterceptTouchEvent(ev);
     }
 
     private void smoothTransToTop() {
