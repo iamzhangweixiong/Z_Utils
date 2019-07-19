@@ -122,10 +122,17 @@
                 android:text="RetrofitTestActivity" />
 
             <Button
+                android:id="@+id/LifeCycleBtn"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="LifeCycleActivity" />
+
+            <Button
                 android:id="@+id/ProcessorBtn"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:text="ProcessorActivity" />
+
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 </android.support.design.widget.CoordinatorLayout>

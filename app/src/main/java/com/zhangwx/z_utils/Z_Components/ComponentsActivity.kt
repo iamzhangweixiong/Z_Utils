@@ -22,6 +22,5 @@ class ComponentsActivity : Activity() {
             val intent = Intent(this, RecycleActivity::class.java)
             startActivity(intent)
         }
-
     }
 }
