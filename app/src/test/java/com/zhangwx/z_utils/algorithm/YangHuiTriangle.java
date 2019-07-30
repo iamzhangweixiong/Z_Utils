@@ -3,6 +3,7 @@ package com.zhangwx.z_utils.algorithm;
 import java.util.ArrayList;
 import java.util.List;
 
+// 杨辉三角：
 public class YangHuiTriangle {
 
     private int numRows = 0;
