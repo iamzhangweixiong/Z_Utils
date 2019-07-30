@@ -1,5 +1,8 @@
 package com.zhangwx.z_utils.algorithm;
 
+/**
+ * 二叉树遍历
+ */
 public class SumTreeNode {
 
     public class TreeNode {
