@@ -65,13 +65,10 @@ public class HandlerThreadActivity extends AppCompatActivity {
         mMsgController = new Handler(mCheckMsgThread.getLooper()) {
             @Override
             public void handleMessage(Message msg) {
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        String result = "实时更新：<font color='red'>%d</font>";
-                        result = String.format(Locale.getDefault(), result, (int) (Math.random() * 3000 + 1000));
-                        mText.setText(Html.fromHtml(result));
-                    }
+                runOnUiThread(() -> {
+                    String result = "实时更新：<font color='red'>%d</font>";
+                    result = String.format(Locale.getDefault(), result, (int) (Math.random() * 3000 + 1000));
+                    mText.setText(Html.fromHtml(result));
                 });
                 if (i > 0) {
                     mMsgController.sendEmptyMessageDelayed(MSG_UPDATE_INFO, 1000);

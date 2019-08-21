@@ -49,6 +49,8 @@ public class ZThreadPool {
 
     private ZThreadPool() {
         mThreadPool = Executors.newFixedThreadPool(CPU_CORE * 2 + 1);
+        Executors.newCachedThreadPool();
+        Executors.newSingleThreadExecutor();
         mScheduledExecutorService = Executors.newScheduledThreadPool(CPU_CORE);
     }
 
