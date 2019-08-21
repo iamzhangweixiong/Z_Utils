@@ -9,6 +9,9 @@ import java.util.Stack;
  * 队列是 FIFO 的，栈是 FILO 的
  * 栈 S1 用来 push 数据
  * 当 pop 数据时，判断 S2 是不是空的，如果是空的，先把 S1 中的数据倒到 S2 中，再从 S2 中依次取出就可以了
+ *
+ *
+ * Stack 继承自 Vector，是线程安全的
  */
 public class TwoStackToQueue {
 
@@ -29,5 +32,20 @@ public class TwoStackToQueue {
             }
         }
         return s2.pop();
+    }
+
+    public static void main(String[] args) {
+        TwoStackToQueue twoStackToQueue = new TwoStackToQueue();
+        twoStackToQueue.push(1);
+        twoStackToQueue.push(2);
+        twoStackToQueue.push(3);
+        twoStackToQueue.push(4);
+        twoStackToQueue.push(5);
+
+        System.out.println(twoStackToQueue.pop());
+        System.out.println(twoStackToQueue.pop());
+        System.out.println(twoStackToQueue.pop());
+        System.out.println(twoStackToQueue.pop());
+        System.out.println(twoStackToQueue.pop());
     }
 }
