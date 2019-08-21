@@ -10,20 +10,31 @@ public class StaticInnerClass {
     private static InnerClass innerClass = null;
 
     static {
-        System.out.println("static code block ...");
-    }
-
-    static class InnerClass {
-         void printName() {
-             System.out.println("InnerClass");
-         }
+        System.out.println("静态代码块执行 ...");
     }
 
     public StaticInnerClass() {
         if (innerClass == null) {
-            System.out.println("new InnerClass ...");
+            System.out.println("new 静态内部类 ...");
             innerClass = new InnerClass();
         }
         innerClass.printName();
+    }
+
+    static class InnerClass {
+
+        static {
+            System.out.println("静态内部类 静态代码块执行 ...");
+        }
+
+        void printName() {
+            System.out.println("静态内部类方法执行 ...");
+        }
+    }
+
+    public static void main(String[] args) {
+        new StaticInnerClass();
+        new StaticInnerClass();
+        new StaticInnerClass();
     }
 }

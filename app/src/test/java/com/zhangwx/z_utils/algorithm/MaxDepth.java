@@ -63,4 +63,9 @@ public class MaxDepth {
         }
 
     }
+
+    public static void main(String[] args) {
+        MaxDepth max = new MaxDepth();
+        System.out.println(max.maxDepth(max.genNode()));
+    }
 }

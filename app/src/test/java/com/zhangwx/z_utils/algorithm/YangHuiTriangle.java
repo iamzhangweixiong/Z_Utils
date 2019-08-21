@@ -46,4 +46,8 @@ public class YangHuiTriangle {
         generate(newList);
     }
 
+    public static void main(String[] args) {
+        YangHuiTriangle yangHuiTriangle = new YangHuiTriangle();
+        System.out.println(yangHuiTriangle.generate(5));
+    }
 }

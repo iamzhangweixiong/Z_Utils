@@ -35,4 +35,8 @@ public class SumTreeNode {
             dfs(node.right, newVal);
         }
     }
+
+    public static void main(String[] args) {
+
+    }
 }

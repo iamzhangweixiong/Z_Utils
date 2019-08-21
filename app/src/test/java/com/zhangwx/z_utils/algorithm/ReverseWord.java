@@ -59,4 +59,8 @@ public class ReverseWord {
         c[e] = temp;
         return swapWord(s + 1, e - 1, c);
     }
+
+    public static void main(String[] args) {
+
+    }
 }

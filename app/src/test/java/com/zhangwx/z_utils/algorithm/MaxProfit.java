@@ -1,5 +1,6 @@
 package com.zhangwx.z_utils.algorithm;
 
+// 求最大利润（最大差值）
 public class MaxProfit {
 
     private int[] prices = new int[]{7, 1, 5, 3, 6, 4};
@@ -24,5 +25,10 @@ public class MaxProfit {
         int max = prices[highPoint] - prices[lowPoint];
 
         return max < 0 ? 0 : max;
+    }
+
+    public static void main(String[] args) {
+        MaxProfit maxProfit = new MaxProfit();
+        System.out.println(maxProfit.maxProfit());
     }
 }
