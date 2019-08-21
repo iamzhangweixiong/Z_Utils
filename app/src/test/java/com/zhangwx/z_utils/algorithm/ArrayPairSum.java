@@ -2,7 +2,9 @@ package com.zhangwx.z_utils.algorithm;
 
 import java.util.Arrays;
 
-// 拆分数组，求从 1 到 n, min(a,b) 总和最大值
+/**
+ * 拆分数组，求从 1 到 n, min(a,b) 总和最大值
+ */
 public class ArrayPairSum {
 
     private int[] intArray = new int[]{1, 4, 3, 2};

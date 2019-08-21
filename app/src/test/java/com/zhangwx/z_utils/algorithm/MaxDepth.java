@@ -3,7 +3,9 @@ package com.zhangwx.z_utils.algorithm;
 import java.util.ArrayList;
 import java.util.List;
 
-// N 叉树最大深度
+/**
+ * N 叉树最大深度
+ */
 public class MaxDepth {
 
     public Node genNode() {
