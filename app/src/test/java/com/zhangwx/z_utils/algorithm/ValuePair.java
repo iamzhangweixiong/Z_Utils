@@ -3,11 +3,17 @@ package com.zhangwx.z_utils.algorithm;
 import java.util.Arrays;
 import java.util.HashMap;
 
-// 找出差为 k 的组合数
+/**
+ * 找出差为 k 的组合数
+ *
+ * 思路：
+ * 利用map集合的没有重复元素、存放的是两个有关联的k和value的值的特性
+ * 只要符合条件就添加，map集合添加时会把相同的给替换掉
+ */
 public class ValuePair {
 
     public int findPairs(int[] nums, int k) {
-        //思路：利用map集合的没有重复元素和存放的是两个有关联的k和value的值的特性只要符合条件就添加，map集合添加时会把相同的给替换掉
+
         if (k < 0) {
             return 0;
         }

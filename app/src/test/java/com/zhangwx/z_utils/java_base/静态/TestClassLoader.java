@@ -1,5 +1,8 @@
-package com.zhangwx.z_utils;
+package com.zhangwx.z_utils.java_base.静态;
 
+/**
+ * 类加载机制
+ */
 public class TestClassLoader {
 
     static class Father {

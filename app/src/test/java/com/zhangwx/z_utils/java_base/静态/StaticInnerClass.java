@@ -1,9 +1,8 @@
-package com.zhangwx.z_utils.java_base;
+package com.zhangwx.z_utils.java_base.静态;
 
 /**
  * AsyncTask java 部分原理
- * 1. 静态代码块只会执行一次
- * 2. 静态内部类只会 new 一次
+ * 2. 静态变量一直都在
  */
 public class StaticInnerClass {
 
