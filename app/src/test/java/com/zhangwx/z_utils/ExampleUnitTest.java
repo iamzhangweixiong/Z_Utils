@@ -4,6 +4,8 @@ import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.function.Consumer;
 
 /**
  * Example local unit test, which will execute on the development machine (host).
