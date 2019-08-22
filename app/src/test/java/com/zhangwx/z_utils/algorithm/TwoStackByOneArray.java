@@ -7,12 +7,12 @@ package com.zhangwx.z_utils.algorithm;
  * | 2 | 1 | 3 | 4 | 6 |   | 9 | 3 | 1 | 5 |
  *  - > - > - > - > - - - - - < - < - < - <
  */
-public class ArrayTwoStack {
+public class TwoStackByOneArray {
 
     private int[] objects;
     private int stack1Index, stack2Index;
 
-    public ArrayTwoStack(int length) {
+    public TwoStackByOneArray(int length) {
         objects = new int[length];
         stack1Index = -1;
         stack2Index = length;
@@ -65,20 +65,20 @@ public class ArrayTwoStack {
     }
 
     public static void main(String[] args) {
-        ArrayTwoStack arrayTwoStack = new ArrayTwoStack(15);
-        arrayTwoStack.pushStack1(2);
-        arrayTwoStack.pushStack1(5);
-        arrayTwoStack.pushStack1(7);
-        arrayTwoStack.pushStack1(8);
-        arrayTwoStack.pushStack1(11);
+        TwoStackByOneArray twoStack = new TwoStackByOneArray(15);
+        twoStack.pushStack1(2);
+        twoStack.pushStack1(5);
+        twoStack.pushStack1(7);
+        twoStack.pushStack1(8);
+        twoStack.pushStack1(11);
 
-        arrayTwoStack.pushStack2(20);
-        arrayTwoStack.pushStack2(50);
-        arrayTwoStack.pushStack2(70);
-        arrayTwoStack.pushStack2(80);
-        arrayTwoStack.pushStack2(110);
+        twoStack.pushStack2(20);
+        twoStack.pushStack2(50);
+        twoStack.pushStack2(70);
+        twoStack.pushStack2(80);
+        twoStack.pushStack2(110);
 
-        arrayTwoStack.getStack1();
-        arrayTwoStack.getStack2();
+        twoStack.getStack1();
+        twoStack.getStack2();
     }
 }

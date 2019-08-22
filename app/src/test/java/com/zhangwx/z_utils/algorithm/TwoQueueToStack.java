@@ -15,7 +15,7 @@ import java.util.Queue;
  * 每次 push 的时候先放到临时队列中，再把主队列中的元素放到临时队列中，最后把主队列和临时队列对调
  * 这样 pop 的时候是 O(1), push 的时候是 O(n)
  */
-public class QueueToStack {
+public class TwoQueueToStack {
 
     private int top;
     private Queue<Integer> queue1 = new LinkedList<>();// 主队列
