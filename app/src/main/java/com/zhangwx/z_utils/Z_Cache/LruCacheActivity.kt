@@ -19,7 +19,7 @@ class LruCacheActivity : Activity() {
         }
 
         ActionGet.setOnClickListener {
-            Toast.makeText(this, myDiskLruCache.value, Toast.LENGTH_SHORT).show()
+//            Toast.makeText(this, myDiskLruCache.value, Toast.LENGTH_SHORT).show()
             content.text = myDiskLruCache.jFile
         }
     }

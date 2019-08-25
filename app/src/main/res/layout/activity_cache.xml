@@ -4,21 +4,31 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <Button
-        android:id="@+id/ActionPut"
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:text="ActionPut" />
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/ActionGet"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:text="ActionGet" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/content"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/ActionPut"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="ActionPut" />
 
+            <Button
+                android:id="@+id/ActionGet"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="ActionGet" />
+
+            <TextView
+                android:id="@+id/content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
 </LinearLayout>

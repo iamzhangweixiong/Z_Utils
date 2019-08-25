@@ -12,11 +12,12 @@ import java.io.IOException;
 public class MyDiskLruCache {
 
     private DiskLruCache diskLruCache;
+    private static int index = 9;
 
     MyDiskLruCache() {
         final File file = FileUtils.getCacheDirectory(MyApplication.getContext(), "LruCache");
         try {
-            diskLruCache = DiskLruCache.open(file, 1, 1, 10 * 1024 * 1024);
+            diskLruCache = DiskLruCache.open(file, 1, 1, 12);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -24,8 +25,8 @@ public class MyDiskLruCache {
 
     public void putValue() {
         try {
-            DiskLruCache.Editor editor = diskLruCache.edit("12345");
-            editor.set(0, "HelloWord");
+            DiskLruCache.Editor editor = diskLruCache.edit("12345" + index++);
+            editor.set(0, "HelloWordHelloWordHelloWordHelloWordHelloWordHelloWordHelloWordHelloWordHelloWord");
             editor.commit();
 //            editor.abort();
         } catch (IOException e) {
@@ -44,13 +45,16 @@ public class MyDiskLruCache {
     }
 
     public String getJFile() {
-        File file = (File) ReflectHelper.getFieldValue(diskLruCache,"journalFile");
+        File file = (File) ReflectHelper.getFieldValue(diskLruCache, "journalFile");
         String[] strings = FileUtil.readFileString(file.getPath());
         StringBuilder builder = new StringBuilder();
-        for (String s: strings) {
+        for (String s : strings) {
             builder.append(s);
             builder.append("\n");
         }
         return builder.toString();
     }
+
+
+
 }
