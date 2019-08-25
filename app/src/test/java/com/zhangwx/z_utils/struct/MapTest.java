@@ -59,6 +59,7 @@ public class MapTest {
 //        linkedHashMap.keySet().forEach(System.out::println);
 //        linkedHashMap.values().forEach(System.out::println);
 
+
         linkedHashMap.forEach((s, s2) -> System.out.println("key: " + s + "  value: " + s2));
 
 
@@ -99,7 +100,7 @@ public class MapTest {
 //        System.out.println("== HashMap ==");
 //        hashMap.forEach((s, s2) -> System.out.println("key: " + s + "  value: " + s2));
 //
-//        System.out.println("== entrySet: ==");
+//        System.out.println("== 推荐使用 entrySet 遍历 ==");
 //        hashMap.entrySet().forEach(stringStringEntry -> System.out.println("key: " + stringStringEntry.getKey() + "  value: " + stringStringEntry.getValue()));
 //
 //        System.out.println("== 链表入口 table: ==");
