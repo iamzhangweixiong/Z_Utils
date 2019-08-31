@@ -7,6 +7,7 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
+import android.os.Looper;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
@@ -27,12 +28,8 @@ import static com.zhangwx.z_utils.Z_Thread.Timer.TimerTest.ALARM_START;
  * Created by zhangex on 2016/12/22.
  */
 public class HandlerThreadActivity extends AppCompatActivity {
-    private static final int MSG_UPDATE_INFO = 0x10;
-    int i = 10;
     private TextView mText;
 
-    private Handler mMsgController;
-    private HandlerThread mCheckMsgThread;
     private TimerTest mTimerTest;
 
     @Override
@@ -44,10 +41,10 @@ public class HandlerThreadActivity extends AppCompatActivity {
 //        mMsgController.sendEmptyMessageDelayed(MSG_UPDATE_INFO, 1000);
 
         findViewById(R.id.ThreadTest).setOnClickListener(v -> {
-            mTimerTest = new TimerTest();
+//            mTimerTest = new TimerTest();
 //            mTimerTest.startTimerTest();
 
-
+//            test();
         });
 
 //        registerReceiver(new BroadcastReceiver() {
@@ -56,26 +53,6 @@ public class HandlerThreadActivity extends AppCompatActivity {
 //                Log.d("receiver", intent.getAction());
 //            }
 //        }, new IntentFilter(ALARM_START));
-    }
-
-    private void initBackThread() {
-
-        mCheckMsgThread = new HandlerThread("check-message-coming");
-        mCheckMsgThread.start();
-        mMsgController = new Handler(mCheckMsgThread.getLooper()) {
-            @Override
-            public void handleMessage(Message msg) {
-                runOnUiThread(() -> {
-                    String result = "实时更新：<font color='red'>%d</font>";
-                    result = String.format(Locale.getDefault(), result, (int) (Math.random() * 3000 + 1000));
-                    mText.setText(Html.fromHtml(result));
-                });
-                if (i > 0) {
-                    mMsgController.sendEmptyMessageDelayed(MSG_UPDATE_INFO, 1000);
-                    i--;
-                }
-            }
-        };
     }
 
     @Override

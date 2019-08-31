@@ -1,17 +1,12 @@
-package com.zhangwx.z_utils.java_base.线程;
+package com.zhangwx.z_utils.Z_Thread.HandlerThread;
 
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 
-import java.util.HashMap;
+public class SubThreadCommunication {
 
-public class HandlerTest {
     private Handler handler;
-
-    HandlerTest() {
-
-    }
 
     public void test() {
         Thread handleThread = new Thread(new Runnable() {
@@ -46,9 +41,5 @@ public class HandlerTest {
         });
         sendThread.setName("send");
         sendThread.start();
-    }
-
-    public static void main(String[] args) {
-        new HandlerTest().test();
     }
 }
