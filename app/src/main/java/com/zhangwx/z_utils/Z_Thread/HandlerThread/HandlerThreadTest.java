@@ -3,7 +3,10 @@ package com.zhangwx.z_utils.Z_Thread.HandlerThread;
 import android.app.Activity;
 import android.os.Handler;
 import android.os.HandlerThread;
+import android.os.Looper;
 import android.os.Message;
+import android.widget.Toast;
+
 import java.lang.ref.WeakReference;
 import java.util.Locale;
 
@@ -13,20 +16,24 @@ public class HandlerThreadTest {
     private int i = 10;
 
     private Handler mMsgController;
-    private android.os.HandlerThread mCheckMsgThread;
+    private HandlerThread mCheckMsgThread;
 
-    private void initBackThread(Activity activity) {
+    public void initBackThread(Activity activity) {
         WeakReference<Activity> reference = new WeakReference<>(activity);
 
         mCheckMsgThread = new HandlerThread("check-message-coming");
         mCheckMsgThread.start();
+
         mMsgController = new Handler(mCheckMsgThread.getLooper()) {
             @Override
             public void handleMessage(Message msg) {
                 reference.get().runOnUiThread(() -> {
-                    String result = "实时更新：<font color='red'>%d</font>";
-                    result = String.format(Locale.getDefault(), result, (int) (Math.random() * 3000 + 1000));
-//                    mText.setText(Html.fromHtml(result));
+                    final String result = "实时更新：<font color='red'>%d</font>";
+                    Toast.makeText(
+                            reference.get(),
+                            String.format(Locale.getDefault(), result, (int) (Math.random() * 3000 + 1000)),
+                            Toast.LENGTH_SHORT
+                    ).show();
                 });
                 if (i > 0) {
                     mMsgController.sendEmptyMessageDelayed(MSG_UPDATE_INFO, 1000);
@@ -34,5 +41,7 @@ public class HandlerThreadTest {
                 }
             }
         };
+
+        mMsgController.sendEmptyMessageDelayed(MSG_UPDATE_INFO, 1000);
     }
 }
