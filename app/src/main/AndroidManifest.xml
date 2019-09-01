@@ -57,6 +57,8 @@
         <activity android:name=".Z_LifeCycle.LifeCycleTestActivity" />
         <activity android:name=".Z_Bitmap.BitmapTestActivity" />
         <activity android:name=".Z_Cache.LruCacheActivity" />
+        <activity android:name=".Z_EventBus.EventBusActivity" />
+        <activity android:name=".Z_EventBus.EventBus2Activity" />
 
         <service
             android:name=".Z_Window.WindowService"

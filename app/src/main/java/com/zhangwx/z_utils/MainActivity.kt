@@ -7,6 +7,7 @@ import android.view.View
 import com.zhangwx.z_utils.Z_Cache.LruCacheActivity
 import com.zhangwx.z_utils.Z_Components.ComponentsActivity
 import com.zhangwx.z_utils.Z_DB.DataBaseActivity
+import com.zhangwx.z_utils.Z_EventBus.EventBusActivity
 import com.zhangwx.z_utils.Z_Intent.IntentActivity
 import com.zhangwx.z_utils.Z_LifeCycle.LifeCycleActivity
 import com.zhangwx.z_utils.Z_ListView.ListViewActivity
@@ -41,6 +42,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         ComponentsBtn.setOnClickListener(this)
         LifeCycleBtn.setOnClickListener(this)
         CacheBtn.setOnClickListener(this)
+        EventBusBtn.setOnClickListener(this)
     }
 
     override fun onClick(view: View) {
@@ -61,6 +63,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.ComponentsBtn -> intent.setClass(this, ComponentsActivity::class.java)
             R.id.LifeCycleBtn -> intent.setClass(this, LifeCycleActivity::class.java)
             R.id.CacheBtn -> intent.setClass(this, LruCacheActivity::class.java)
+            R.id.EventBusBtn -> intent.setClass(this, EventBusActivity::class.java)
         }
         startActivity(intent)
     }

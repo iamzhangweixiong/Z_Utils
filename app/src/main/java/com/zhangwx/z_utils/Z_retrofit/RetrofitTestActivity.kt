@@ -11,6 +11,7 @@ import com.zhangwx.z_utils.Z_Permission.PermissionUtils
 import com.zhangwx.z_utils.Z_retrofit.loadfile.ApkLoadService
 import com.zhangwx.z_utils.Z_retrofit.testapi.TestModel
 import kotlinx.android.synthetic.main.activity_retrofit.*
+import org.greenrobot.eventbus.EventBus
 
 class RetrofitTestActivity : Activity() {
 
@@ -25,5 +26,7 @@ class RetrofitTestActivity : Activity() {
                 Log.e("zhang", "TestModel callback\naBoolean = $aBoolean")
             }
         }
+
+//        EventBus.getDefault().postSticky()
     }
 }

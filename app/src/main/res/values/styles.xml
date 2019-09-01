@@ -28,4 +28,10 @@
         <item name="android:windowIsFloating">true</item>
         <item name="android:windowFullscreen">true</item>
     </style>
+
+    <style name="ButtonOfMainFunc" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
 </resources>

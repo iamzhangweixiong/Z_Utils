@@ -6,37 +6,37 @@
     android:fitsSystemWindows="true">
 
     <!--<android.support.design.widget.AppBarLayout-->
-        <!--android:id="@+id/app_bar"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="180dp"-->
-        <!--android:fitsSystemWindows="true"-->
-        <!--android:theme="@style/AppTheme.AppBarOverlay">-->
+    <!--android:id="@+id/app_bar"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="180dp"-->
+    <!--android:fitsSystemWindows="true"-->
+    <!--android:theme="@style/AppTheme.AppBarOverlay">-->
 
-        <!--<android.support.design.widget.CollapsingToolbarLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:fitsSystemWindows="true"-->
-            <!--app:contentScrim="?attr/colorPrimary"-->
-            <!--app:layout_scrollFlags="scroll|exitUntilCollapsed"-->
-            <!--app:toolbarId="@+id/toolbar">-->
+    <!--<android.support.design.widget.CollapsingToolbarLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:fitsSystemWindows="true"-->
+    <!--app:contentScrim="?attr/colorPrimary"-->
+    <!--app:layout_scrollFlags="scroll|exitUntilCollapsed"-->
+    <!--app:toolbarId="@+id/toolbar">-->
 
-            <!--<ImageView-->
-                <!--android:id="@+id/iv"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="match_parent"-->
-                <!--android:scaleType="centerCrop"-->
-                <!--android:src="@mipmap/ic_launcher"-->
-                <!--app:layout_collapseMode="parallax"-->
-                <!--app:layout_collapseParallaxMultiplier="0.5" />-->
+    <!--<ImageView-->
+    <!--android:id="@+id/iv"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:scaleType="centerCrop"-->
+    <!--android:src="@mipmap/ic_launcher"-->
+    <!--app:layout_collapseMode="parallax"-->
+    <!--app:layout_collapseParallaxMultiplier="0.5" />-->
 
-            <!--<android.support.v7.widget.Toolbar-->
-                <!--android:id="@+id/toolbar"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="?attr/actionBarSize"-->
-                <!--app:layout_collapseMode="pin"-->
-                <!--app:popupTheme="@style/AppTheme.PopupOverlay" />-->
+    <!--<android.support.v7.widget.Toolbar-->
+    <!--android:id="@+id/toolbar"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="?attr/actionBarSize"-->
+    <!--app:layout_collapseMode="pin"-->
+    <!--app:popupTheme="@style/AppTheme.PopupOverlay" />-->
 
-        <!--</android.support.design.widget.CollapsingToolbarLayout>-->
+    <!--</android.support.design.widget.CollapsingToolbarLayout>-->
     <!--</android.support.design.widget.AppBarLayout>-->
 
     <android.support.v4.widget.NestedScrollView
@@ -51,74 +51,62 @@
 
             <Button
                 android:id="@+id/ComponentsBtn"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
+                style="@style/ButtonOfMainFunc"
                 android:text="ComponentsActivity" />
 
             <Button
                 android:id="@+id/RecycleBtn"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
+                style="@style/ButtonOfMainFunc"
                 android:text="RecycleActivity" />
 
             <Button
                 android:id="@+id/ViewPagerBtn"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
+                style="@style/ButtonOfMainFunc"
                 android:text="ViewPagerActivity" />
 
             <Button
                 android:id="@+id/HandlerThreadBtn"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
+                style="@style/ButtonOfMainFunc"
                 android:text="HandlerThreadActivity" />
 
             <Button
                 android:id="@+id/TouchTestBtn"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
+                style="@style/ButtonOfMainFunc"
                 android:text="TouchTestActivity" />
 
             <Button
                 android:id="@+id/WindowTestBtn"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
+                style="@style/ButtonOfMainFunc"
                 android:text="WindowActivity" />
 
             <Button
                 android:id="@+id/ReflectTestBtn"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
+                style="@style/ButtonOfMainFunc"
                 android:text="ReflectActivity" />
 
             <Button
                 android:id="@+id/IntentTestBtn"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
+                style="@style/ButtonOfMainFunc"
                 android:text="IntentActivity" />
 
             <Button
                 android:id="@+id/DataBaseTestBtn"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
+                style="@style/ButtonOfMainFunc"
                 android:text="DataBaseActivity" />
 
             <Button
                 android:id="@+id/ListTestBtn"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
+                style="@style/ButtonOfMainFunc"
                 android:text="ListActivity" />
 
             <Button
                 android:id="@+id/PatternBtn"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
+                style="@style/ButtonOfMainFunc"
                 android:text="PatternActivity" />
 
             <Button
                 android:id="@+id/RetrofitBtn"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
+                style="@style/ButtonOfMainFunc"
                 android:text="RetrofitTestActivity" />
 
             <Button
@@ -129,16 +117,18 @@
 
             <Button
                 android:id="@+id/ProcessorBtn"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
+                style="@style/ButtonOfMainFunc"
                 android:text="ProcessorActivity" />
 
             <Button
                 android:id="@+id/CacheBtn"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
+                style="@style/ButtonOfMainFunc"
                 android:text="CacheActivity" />
 
+            <Button
+                android:id="@+id/EventBusBtn"
+                style="@style/ButtonOfMainFunc"
+                android:text="EventBusActivity" />
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 </android.support.design.widget.CoordinatorLayout>

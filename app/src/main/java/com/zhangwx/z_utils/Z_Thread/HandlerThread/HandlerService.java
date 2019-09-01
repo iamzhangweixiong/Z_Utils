@@ -5,7 +5,7 @@ import android.os.HandlerThread;
 import android.os.Message;
 
 /**
- * 用 HandlerThread 实现不需要直接更新 UI 的后台操作
+ * 用 HandlerThreadTest 实现不需要直接更新 UI 的后台操作
  * Created by zhangwx on 2017/5/14.
  */
 
@@ -61,7 +61,7 @@ public class HandlerService {
     }
 
     /**
-     * 停止 HandlerThread 的 Looper
+     * 停止 HandlerThreadTest 的 Looper
      */
     public void quit() {
         mHandlerThread.quit();
