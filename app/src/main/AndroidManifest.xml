@@ -59,6 +59,7 @@
         <activity android:name=".Z_Cache.LruCacheActivity" />
         <activity android:name=".Z_EventBus.EventBusActivity" />
         <activity android:name=".Z_EventBus.EventBus2Activity" />
+        <activity android:name=".Z_ScreenFix.ScreenFixActivity" />
 
         <service
             android:name=".Z_Window.WindowService"

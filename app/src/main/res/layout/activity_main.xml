@@ -128,6 +128,11 @@
                 android:id="@+id/EventBusBtn"
                 style="@style/ButtonOfMainFunc"
                 android:text="EventBusActivity" />
+
+            <Button
+                android:id="@+id/ScreenFixBtn"
+                style="@style/ButtonOfMainFunc"
+                android:text="ScreenFixActivity" />
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 </android.support.design.widget.CoordinatorLayout>

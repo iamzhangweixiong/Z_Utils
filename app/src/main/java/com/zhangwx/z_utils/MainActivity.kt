@@ -14,6 +14,7 @@ import com.zhangwx.z_utils.Z_ListView.ListViewActivity
 import com.zhangwx.z_utils.Z_Processor.ProcessorActivity
 import com.zhangwx.z_utils.Z_RecycleView.RecycleActivity
 import com.zhangwx.z_utils.Z_Reflect.ReflectActivity
+import com.zhangwx.z_utils.Z_ScreenFix.ScreenFixActivity
 import com.zhangwx.z_utils.Z_Thread.HandlerThreadActivity
 import com.zhangwx.z_utils.Z_TouchEvent.TouchTestActivity
 import com.zhangwx.z_utils.Z_ViewPager.ViewPagerActivity
@@ -43,6 +44,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         LifeCycleBtn.setOnClickListener(this)
         CacheBtn.setOnClickListener(this)
         EventBusBtn.setOnClickListener(this)
+        ScreenFixBtn.setOnClickListener(this)
     }
 
     override fun onClick(view: View) {
@@ -64,6 +66,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.LifeCycleBtn -> intent.setClass(this, LifeCycleActivity::class.java)
             R.id.CacheBtn -> intent.setClass(this, LruCacheActivity::class.java)
             R.id.EventBusBtn -> intent.setClass(this, EventBusActivity::class.java)
+            R.id.ScreenFixBtn -> intent.setClass(this, ScreenFixActivity::class.java)
         }
         startActivity(intent)
     }
