@@ -35,7 +35,7 @@ public class UserInfoTable implements BaseColumns {
             database.beginTransaction();
             database.execSQL(DROP_TABLE);
             createTable(database);
-            database.setTransactionSuccessful();
+            database.setTransactionSuccessful(); // 设置事务成功，不设置的话会自动 rollback，不会提交
         } catch (Exception ex) {
             ex.printStackTrace();
         } finally {

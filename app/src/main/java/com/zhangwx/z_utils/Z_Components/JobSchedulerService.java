@@ -15,8 +15,7 @@ public class JobSchedulerService extends JobService {
 
     @Override
     public boolean onStartJob(JobParameters params) {
-        Toast.makeText(this, params.getJobId(), Toast.LENGTH_SHORT).show();
-        EventBus.getDefault().post("onStartJob");
+        EventBus.getDefault().post(params.getJobId());
         return false;
     }
 

@@ -1,5 +1,6 @@
 package com.zhangwx.z_utils.Z_Components
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.job.JobInfo
 import android.app.job.JobScheduler
@@ -39,11 +40,12 @@ class ComponentsActivity : Activity() {
         }
 
         JobService.setOnClickListener {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                 val job = this.getSystemService(JOB_SCHEDULER_SERVICE) as JobScheduler
                 val jobInfo = JobInfo
                         .Builder(SchedulerId, ComponentName(this, JobSchedulerService::class.java))
                         .setPeriodic(1000L * 60)//间隔
+                        .setTriggerContentMaxDelay(1000L * 60)
                         .build()
                 job.schedule(jobInfo)
             }
@@ -55,8 +57,9 @@ class ComponentsActivity : Activity() {
         EventBus.getDefault().unregister(this)
     }
 
+    @SuppressLint("SetTextI18n")
     @Subscribe(threadMode = ThreadMode.MAIN)
-    fun onJobscheduler(job: String) {
-        infoText.text = DateUtils.getCurrentTime(System.currentTimeMillis())
+    fun onJobscheduler(id: Int) {
+        infoText.text = "job id = " + id + "\n" + DateUtils.getCurrentTime(System.currentTimeMillis())
     }
 }
