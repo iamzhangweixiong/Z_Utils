@@ -113,7 +113,7 @@ public class NetworkTypeUtil {
      */
     private static boolean checkWifiNetworkAvailableByNetState(Context context) {
         // Monitor network connections (Wi-Fi, GPRS, UMTS, etc.)
-        // mobile 3G Data Network
+        // mobile 3G ContentData Network
         ConnectivityManager conmgr = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         if(conmgr == null) {
             Log.e(TAG,"checkWifiNetworkAvailableByNetState conn mgr is null");

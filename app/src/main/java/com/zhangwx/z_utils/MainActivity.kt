@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
+import com.zhangwx.z_utils.Z_AIDL.AidlClientActivity
 import com.zhangwx.z_utils.Z_Cache.LruCacheActivity
 import com.zhangwx.z_utils.Z_Components.ComponentsActivity
 import com.zhangwx.z_utils.Z_DB.DataBaseActivity
@@ -45,6 +46,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         CacheBtn.setOnClickListener(this)
         EventBusBtn.setOnClickListener(this)
         ScreenFixBtn.setOnClickListener(this)
+        AidlBtn.setOnClickListener(this)
     }
 
     override fun onClick(view: View) {
@@ -67,6 +69,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.CacheBtn -> intent.setClass(this, LruCacheActivity::class.java)
             R.id.EventBusBtn -> intent.setClass(this, EventBusActivity::class.java)
             R.id.ScreenFixBtn -> intent.setClass(this, ScreenFixActivity::class.java)
+            R.id.AidlBtn -> intent.setClass(this, AidlClientActivity::class.java)
         }
         startActivity(intent)
     }

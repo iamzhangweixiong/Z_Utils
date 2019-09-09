@@ -9,14 +9,11 @@ import android.util.Log;
 
 import com.zhangwx.z_utils.MyApplication;
 import com.zhangwx.z_utils.Z_DB.file.FileCache;
-import com.zhangwx.z_utils.Z_retrofit.testapi.TestModel;
 
 import java.io.IOException;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
-
-import kotlin.Unit;
 
 public class TimerTest {
 

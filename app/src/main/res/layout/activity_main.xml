@@ -133,6 +133,11 @@
                 android:id="@+id/ScreenFixBtn"
                 style="@style/ButtonOfMainFunc"
                 android:text="ScreenFixActivity" />
+
+            <Button
+                android:id="@+id/AidlBtn"
+                style="@style/ButtonOfMainFunc"
+                android:text="AidlClientActivity" />
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 </android.support.design.widget.CoordinatorLayout>

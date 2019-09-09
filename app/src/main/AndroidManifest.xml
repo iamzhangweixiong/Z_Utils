@@ -60,6 +60,7 @@
         <activity android:name=".Z_EventBus.EventBusActivity" />
         <activity android:name=".Z_EventBus.EventBus2Activity" />
         <activity android:name=".Z_ScreenFix.ScreenFixActivity" />
+        <activity android:name=".Z_AIDL.AidlClientActivity" />
 
         <service
             android:name=".Z_Window.WindowService"
@@ -78,6 +79,8 @@
         <service
             android:name=".Z_Components.JobSchedulerService"
             android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service android:name=".Z_AIDL.RemoteServer"
+            android:process=":service"/>
 
         <provider
             android:name=".Z_DB.UserInfoContentProvider"
