@@ -16,4 +16,15 @@
         android:layout_height="56dp"
         android:text="JumpService" />
 
+    <Button
+        android:id="@+id/JobService"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="JobService" />
+
+    <TextView
+        android:id="@+id/infoText"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="infoText" />
 </LinearLayout>

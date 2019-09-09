@@ -5,16 +5,16 @@
     android:orientation="vertical">
 
     <Button
-        android:id="@+id/Jump_setting"
+        android:id="@+id/startSelf"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:text="Jump_setting" />
+        android:text="startSelf" />
 
     <Button
         android:id="@+id/notification"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:text="send Notify" />
+        android:text="send" />
 
     <Button
         android:id="@+id/task"

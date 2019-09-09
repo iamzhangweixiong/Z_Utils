@@ -75,6 +75,9 @@
         </service>
         <service android:name=".Z_Intent.NotificationGuideService" />
         <service android:name=".Z_retrofit.loadfile.ApkLoadService" />
+        <service
+            android:name=".Z_Components.JobSchedulerService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
 
         <provider
             android:name=".Z_DB.UserInfoContentProvider"

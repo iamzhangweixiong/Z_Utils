@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.zhangwx.z_utils.R;
+import com.zhangwx.z_utils.Z_Intent.activity.TaskTestActivity;
 import com.zhangwx.z_utils.Z_UI.ViewUtils;
 
 /**
@@ -18,6 +19,7 @@ import com.zhangwx.z_utils.Z_UI.ViewUtils;
 public class IntentActivity extends Activity implements View.OnClickListener {
 
     public static final String TAG = "IntentActivity";
+    public static final int REQUEST_CODE = 10001;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,7 @@ public class IntentActivity extends Activity implements View.OnClickListener {
         setContentView(R.layout.activity_intent);
         ViewUtils.$(this, R.id.Jump_setting).setOnClickListener(this);
         ViewUtils.$(this, R.id.notification).setOnClickListener(this);
+        ViewUtils.$(this, R.id.task).setOnClickListener(this);
     }
 
     @Override
@@ -65,7 +68,17 @@ public class IntentActivity extends Activity implements View.OnClickListener {
             case R.id.notification:
                 NotificationHelper.showNotification(this);
                 break;
+            case R.id.task:
+                Intent intent1 = new Intent(this, TaskTestActivity.class);
+                startActivityForResult(intent1, REQUEST_CODE);
+                break;
         }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
     }
 
     public Intent getNotificationServiceSettingIntent() {

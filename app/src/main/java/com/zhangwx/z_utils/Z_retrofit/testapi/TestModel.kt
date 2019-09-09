@@ -27,7 +27,7 @@ class TestModel {
             .build()
 
     fun testUrl(url: String, callBack: (Boolean) -> Unit) {
-        retrofit.create(TestInterface::class.java)
+        val _disposable = retrofit.create(TestInterface::class.java)
                 .testapi(url)
                 .subscribeOn(Schedulers.io())
                 .subscribe({
