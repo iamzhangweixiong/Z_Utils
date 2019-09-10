@@ -5,7 +5,7 @@ import android.os.Parcelable;
 
 public class ContentData implements Parcelable {
 
-    private String content;
+    public String content;
 
     @Override
     public int describeContents() {
@@ -15,6 +15,10 @@ public class ContentData implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(this.content);
+    }
+
+    public void readFromParcel(Parcel in) {
+        this.content = in.readString();
     }
 
     public ContentData() {
