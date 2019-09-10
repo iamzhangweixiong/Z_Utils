@@ -6,7 +6,8 @@ interface ITestInterface {
 
     String getTestContent(int id);
 
-    void testIn(in ContentData data);
+    // oneway 表示非同步方法，是异步调用，但是不能有返回值
+    oneway void testIn(in ContentData data);
 
     void testOut(out ContentData data);
 
