@@ -138,6 +138,11 @@
                 android:id="@+id/AidlBtn"
                 style="@style/ButtonOfMainFunc"
                 android:text="AidlClientActivity" />
+
+            <Button
+                android:id="@+id/WebViewBtn"
+                style="@style/ButtonOfMainFunc"
+                android:text="WebViewTestActivity" />
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 </android.support.design.widget.CoordinatorLayout>

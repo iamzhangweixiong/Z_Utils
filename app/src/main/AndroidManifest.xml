@@ -61,6 +61,7 @@
         <activity android:name=".Z_EventBus.EventBus2Activity" />
         <activity android:name=".Z_ScreenFix.ScreenFixActivity" />
         <activity android:name=".Z_AIDL.AidlClientActivity" />
+        <activity android:name=".Z_Webview.WebViewTestActivity" />
 
         <service
             android:name=".Z_Window.WindowService"

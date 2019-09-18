@@ -1,6 +1,8 @@
 package com.zhangwx.z_utils.Z_Thread;
 
 import android.os.Bundle;
+import android.os.Looper;
+import android.os.MessageQueue;
 import android.support.v7.app.AppCompatActivity;
 import com.zhangwx.z_utils.R;
 import com.zhangwx.z_utils.Z_Thread.HandlerThread.SubThreadCommunication;
@@ -18,6 +20,14 @@ public class HandlerThreadActivity extends AppCompatActivity {
         findViewById(R.id.ThreadTest).setOnClickListener(v -> {
 //            new SubThreadCommunication().test();
         });
+
+        Looper.myQueue().addIdleHandler(new MessageQueue.IdleHandler() {
+            @Override
+            public boolean queueIdle() {
+                return false;
+            }
+        });
+
     }
 
     @Override
