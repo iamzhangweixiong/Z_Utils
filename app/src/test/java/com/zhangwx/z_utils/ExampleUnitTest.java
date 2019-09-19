@@ -13,11 +13,27 @@ import java.util.function.Consumer;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 public class ExampleUnitTest {
+
+    public enum Type {
+        START, NODE, END;
+
+        public String getName() {
+            switch (Type.this) {
+                case START:
+                    return "s";
+                default:
+                    return "f";
+            }
+        }
+    }
+
     @Test
     public void addition_isCorrect() throws Exception {
 
         int a = 1;
         System.out.println(a << 2 | 1);
+
+        System.out.println(Type.START.getName());
 
     }
 }
