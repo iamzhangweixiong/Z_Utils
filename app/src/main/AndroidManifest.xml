@@ -46,7 +46,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.GuideAlpha" />
         <activity android:name=".Z_ListView.ListViewActivity" />
-        <activity android:name=".Z_Widget.PatternActivity" />
+        <activity android:name=".Z_Widget.WidgetTestActivity" />
         <activity android:name=".Z_retrofit.RetrofitTestActivity" />
         <activity android:name=".Z_Processor.ProcessorActivity" />
 
@@ -63,6 +63,7 @@
         <activity android:name=".Z_ScreenFix.ScreenFixActivity" />
         <activity android:name=".Z_AIDL.AidlClientActivity" />
         <activity android:name=".Z_Webview.WebViewTestActivity" />
+        <activity android:name=".Z_Anima.AnimationTestActivity" />
 
         <service
             android:name=".Z_Window.WindowService"

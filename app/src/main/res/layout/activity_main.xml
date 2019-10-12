@@ -143,6 +143,11 @@
                 android:id="@+id/WebViewBtn"
                 style="@style/ButtonOfMainFunc"
                 android:text="WebViewTestActivity" />
+
+            <Button
+                android:id="@+id/AnimationBtn"
+                style="@style/ButtonOfMainFunc"
+                android:text="AnimationTestActivity" />
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 </android.support.design.widget.CoordinatorLayout>

@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import com.zhangwx.z_utils.Z_AIDL.AidlClientActivity
+import com.zhangwx.z_utils.Z_Anima.AnimationTestActivity
 import com.zhangwx.z_utils.Z_Cache.LruCacheActivity
 import com.zhangwx.z_utils.Z_Components.ComponentsActivity
 import com.zhangwx.z_utils.Z_DB.DataBaseActivity
@@ -19,7 +20,7 @@ import com.zhangwx.z_utils.Z_ScreenFix.ScreenFixActivity
 import com.zhangwx.z_utils.Z_Thread.HandlerThreadActivity
 import com.zhangwx.z_utils.Z_TouchEvent.TouchTestActivity
 import com.zhangwx.z_utils.Z_ViewPager.ViewPagerActivity
-import com.zhangwx.z_utils.Z_Widget.PatternActivity
+import com.zhangwx.z_utils.Z_Widget.WidgetTestActivity
 import com.zhangwx.z_utils.Z_Window.WindowActivity
 import com.zhangwx.z_utils.Z_retrofit.RetrofitTestActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -47,6 +48,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         EventBusBtn.setOnClickListener(this)
         ScreenFixBtn.setOnClickListener(this)
         AidlBtn.setOnClickListener(this)
+        AnimationBtn.setOnClickListener(this)
     }
 
     override fun onClick(view: View) {
@@ -61,7 +63,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.IntentTestBtn -> intent.setClass(this, IntentActivity::class.java)
             R.id.DataBaseTestBtn -> intent.setClass(this, DataBaseActivity::class.java)
             R.id.ListTestBtn -> intent.setClass(this, ListViewActivity::class.java)
-            R.id.PatternBtn -> intent.setClass(this, PatternActivity::class.java)
+            R.id.PatternBtn -> intent.setClass(this, WidgetTestActivity::class.java)
             R.id.RetrofitBtn -> intent.setClass(this, RetrofitTestActivity::class.java)
             R.id.ProcessorBtn -> intent.setClass(this, ProcessorActivity::class.java)
             R.id.ComponentsBtn -> intent.setClass(this, ComponentsActivity::class.java)
@@ -70,6 +72,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.EventBusBtn -> intent.setClass(this, EventBusActivity::class.java)
             R.id.ScreenFixBtn -> intent.setClass(this, ScreenFixActivity::class.java)
             R.id.AidlBtn -> intent.setClass(this, AidlClientActivity::class.java)
+            R.id.AnimationBtn -> intent.setClass(this, AnimationTestActivity::class.java)
         }
         startActivity(intent)
     }
