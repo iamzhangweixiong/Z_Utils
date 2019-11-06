@@ -1,19 +1,13 @@
 package com.zhangwx.z_utils.Z_DB.file;
 
 import com.zhangwx.z_utils.MyApplication;
-
-import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.nio.channels.FileLock;
 import java.util.List;
-import java.util.zip.CRC32;
-
 import okio.BufferedSink;
 import okio.BufferedSource;
 import okio.Okio;
