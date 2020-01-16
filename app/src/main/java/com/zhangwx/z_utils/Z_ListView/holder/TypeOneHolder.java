@@ -9,8 +9,6 @@ import android.widget.TextView;
 
 import com.zhangwx.z_utils.R;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * Created by zhangweixiong on 2017/10/15.
@@ -18,13 +16,12 @@ import butterknife.ButterKnife;
 
 public class TypeOneHolder {
 
-    @BindView(R.id.lv_text_1)
     TextView mTitle;
-    @BindView(R.id.lv_image_1)
     ImageView mImage;
 
     public TypeOneHolder(View view) {
-        ButterKnife.bind(this,view);
+      mTitle = view.findViewById(R.id.lv_text_1);
+      mImage = view.findViewById(R.id.lv_image_1);
     }
 
     public ImageView getImage() {

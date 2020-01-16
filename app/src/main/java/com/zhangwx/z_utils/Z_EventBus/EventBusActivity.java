@@ -2,15 +2,13 @@ package com.zhangwx.z_utils.Z_EventBus;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 
 import com.zhangwx.z_utils.R;
 
 import org.greenrobot.eventbus.EventBus;
-
-import io.reactivex.subjects.Subject;
 
 public class EventBusActivity extends AppCompatActivity {
 

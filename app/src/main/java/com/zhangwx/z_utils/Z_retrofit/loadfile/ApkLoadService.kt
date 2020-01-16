@@ -19,7 +19,7 @@ import java.io.File
 import java.io.FileOutputStream
 import android.app.NotificationManager
 import android.content.Context
-import android.support.v4.app.NotificationCompat
+import androidx.core.app.NotificationCompat
 import com.zhangwx.z_utils.R
 import com.zhangwx.z_utils.Z_retrofit.DownLoadProgressListener
 

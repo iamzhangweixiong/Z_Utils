@@ -2,7 +2,7 @@ package com.zhangwx.z_utils.Z_Widget
 
 import android.os.Bundle
 import android.os.StatFs
-import android.support.v4.app.FragmentActivity
+import androidx.fragment.app.FragmentActivity
 import android.widget.Toast
 import com.zhangwx.z_utils.R
 import com.zhangwx.z_utils.Z_Widget.password.LockPatternView
@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.activity_password.*
  * Created by zhangweixiong on 2017/11/3.
  */
 
-class WidgetTestActivity : FragmentActivity() {
+class WidgetTestActivity : androidx.fragment.app.FragmentActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

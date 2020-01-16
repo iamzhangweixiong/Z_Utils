@@ -7,8 +7,8 @@ import android.graphics.CornerPathEffect;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
-import android.support.annotation.FloatRange;
-import android.support.v4.view.ViewCompat;
+import androidx.annotation.FloatRange;
+import androidx.core.view.ViewCompat;
 import android.util.AttributeSet;
 import android.view.View;
 

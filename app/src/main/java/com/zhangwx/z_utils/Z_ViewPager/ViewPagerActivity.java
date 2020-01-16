@@ -2,14 +2,12 @@ package com.zhangwx.z_utils.Z_ViewPager;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
+import androidx.viewpager.widget.ViewPager;
 import android.view.GestureDetector;
 import android.widget.LinearLayout;
 
 import com.zhangwx.z_utils.R;
 import com.zhangwx.z_utils.Z_UI.ViewUtils;
-import com.zhangwx.z_utils.Z_ViewPager.transformer.NonPageTransformer;
-import com.zhangwx.z_utils.Z_ViewPager.transformer.RevealTransformer;
 import com.zhangwx.z_utils.Z_ViewPager.transformer.ScaleTransFormer;
 
 /**

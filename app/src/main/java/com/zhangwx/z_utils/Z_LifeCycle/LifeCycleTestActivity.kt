@@ -1,7 +1,7 @@
 package com.zhangwx.z_utils.Z_LifeCycle
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.zhangwx.z_utils.R
 
 class LifeCycleTestActivity: AppCompatActivity() {

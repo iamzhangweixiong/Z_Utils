@@ -1,12 +1,11 @@
 package com.zhangwx.z_utils.Z_TouchEvent;
 
 import android.content.Context;
-import android.support.v7.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatButton;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
 
 /**
  * Created by zhangwx on 2017/1/4.

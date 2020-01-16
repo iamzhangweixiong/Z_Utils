@@ -3,9 +3,8 @@ package com.zhangwx.z_utils.Z_Thread;
 import android.os.Bundle;
 import android.os.Looper;
 import android.os.MessageQueue;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import com.zhangwx.z_utils.R;
-import com.zhangwx.z_utils.Z_Thread.HandlerThread.SubThreadCommunication;
 
 /**
  * Created by zhangex on 2016/12/22.

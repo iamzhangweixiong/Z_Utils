@@ -6,7 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Rect;
 import android.os.Build;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.text.InputType;
 import android.view.TouchDelegate;
 import android.view.View;

@@ -1,7 +1,7 @@
 package com.zhangwx.z_utils.Z_Bitmap
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.zhangwx.z_utils.R
 import kotlinx.android.synthetic.main.activity_bitmap.*

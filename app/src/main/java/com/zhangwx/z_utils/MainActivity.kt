@@ -2,7 +2,7 @@ package com.zhangwx.z_utils
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.view.View
 import com.zhangwx.z_utils.Z_AIDL.AidlClientActivity
 import com.zhangwx.z_utils.Z_Anima.AnimationTestActivity

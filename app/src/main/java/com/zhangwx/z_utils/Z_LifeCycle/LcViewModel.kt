@@ -1,7 +1,7 @@
 package com.zhangwx.z_utils.Z_LifeCycle
 
-import android.arch.lifecycle.MutableLiveData
-import android.arch.lifecycle.ViewModel
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 
 class LcViewModel: ViewModel() {
     val testString by lazy { MutableLiveData<String>() }

@@ -3,7 +3,7 @@ package com.zhangwx.z_utils.Z_Permission;
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
-import android.support.v4.app.ActivityCompat;
+import androidx.core.app.ActivityCompat;
 
 /**
  * Created by zhangwx on 2017/3/20.

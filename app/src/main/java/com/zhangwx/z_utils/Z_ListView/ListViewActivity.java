@@ -2,16 +2,12 @@ package com.zhangwx.z_utils.Z_ListView;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.zhangwx.z_utils.R;
+import androidx.annotation.Nullable;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
+import com.zhangwx.z_utils.R;
 
 /**
  * Created by zhangweixiong on 2017/10/15.
@@ -19,21 +15,17 @@ import butterknife.ButterKnife;
 
 public class ListViewActivity extends Activity {
 
-    @BindView(R.id.listview)
     ListView mListView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listview);
-        ButterKnife.bind(this);
+        mListView = findViewById(R.id.listview);
         mListView.setAdapter(new ListViewAdapter(this));
-        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(), "onItemClick", Toast.LENGTH_SHORT).show();
-            }
-        });
+        mListView.setOnItemClickListener((parent, view, position, id)
+                -> Toast.makeText(getApplicationContext(), "onItemClick", Toast.LENGTH_SHORT).show()
+        );
     }
 
 }

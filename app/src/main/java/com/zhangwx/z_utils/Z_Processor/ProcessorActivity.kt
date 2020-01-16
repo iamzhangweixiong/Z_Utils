@@ -5,10 +5,10 @@ import android.app.ActivityManager
 import android.content.Context
 import android.os.Bundle
 import android.os.Debug
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.zhangwx.z_utils.R
 import kotlinx.android.synthetic.main.activity_processer.*
-import android.support.v4.content.ContextCompat.getSystemService
+import androidx.core.content.ContextCompat.getSystemService
 
 class ProcessorActivity : AppCompatActivity() {
 

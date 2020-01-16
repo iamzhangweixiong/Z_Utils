@@ -2,7 +2,7 @@ package com.zhangwx.z_utils.Z_ScreenFix
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.zhangwx.z_utils.R
 import kotlinx.android.synthetic.main.activity_screen_fix.*
 

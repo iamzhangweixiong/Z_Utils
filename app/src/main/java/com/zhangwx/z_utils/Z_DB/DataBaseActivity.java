@@ -5,19 +5,17 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.zhangwx.z_utils.R;
-import com.zhangwx.z_utils.Z_DB.datedb.CorpusTestDBHelper;
 import com.zhangwx.z_utils.Z_DB.file.FileCache;
 import com.zhangwx.z_utils.Z_DB.file.FilePath;
-import com.zhangwx.z_utils.Z_Utils.DateUtils;
 import com.zhangwx.z_utils.Z_UI.ViewUtils;
 
 import java.io.IOException;

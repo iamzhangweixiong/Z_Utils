@@ -1,8 +1,8 @@
 package com.zhangwx.z_utils;
 
 import android.content.Context;
-import android.support.multidex.MultiDex;
-import android.support.multidex.MultiDexApplication;
+import androidx.multidex.MultiDex;
+import androidx.multidex.MultiDexApplication;
 import com.facebook.stetho.Stetho;
 import com.squareup.leakcanary.LeakCanary;
 

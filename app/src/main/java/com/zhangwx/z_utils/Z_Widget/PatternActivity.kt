@@ -1,7 +1,7 @@
 package com.zhangwx.z_utils.Z_Widget
 
 import android.os.Bundle
-import android.support.v4.app.FragmentActivity
+import androidx.fragment.app.FragmentActivity
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.activity_password.*
  * Created by zhangweixiong on 2017/11/3.
  */
 
-class PatternActivity : FragmentActivity() {
+class PatternActivity : androidx.fragment.app.FragmentActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
