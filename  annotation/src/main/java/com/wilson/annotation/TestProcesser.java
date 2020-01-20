@@ -27,6 +27,22 @@ public class TestProcesser extends AbstractProcessor {
 
     private Messager messager; //日志处理
 
+    public static boolean isField(Element annotatedClass) {
+        return annotatedClass.getKind() == ElementKind.FIELD;
+    }
+
+    public static boolean isFinal(Element annotatedClass) {
+        return annotatedClass.getModifiers().contains(Modifier.FINAL);
+    }
+
+    public static boolean isPublic(Element annotatedClass) {
+        return annotatedClass.getModifiers().contains(Modifier.PUBLIC);
+    }
+
+    public static boolean isPrivate(Element annotatedClass) {
+        return annotatedClass.getModifiers().contains(Modifier.PRIVATE);
+    }
+
     @Override
     public synchronized void init(ProcessingEnvironment processingEnvironment) {
         super.init(processingEnvironment);
@@ -56,22 +72,5 @@ public class TestProcesser extends AbstractProcessor {
 
 
         return true;
-    }
-
-
-    public static boolean isField(Element annotatedClass) {
-        return annotatedClass.getKind() == ElementKind.FIELD;
-    }
-
-    public static boolean isFinal(Element annotatedClass) {
-        return annotatedClass.getModifiers().contains(Modifier.FINAL);
-    }
-
-    public static boolean isPublic(Element annotatedClass) {
-        return annotatedClass.getModifiers().contains(Modifier.PUBLIC);
-    }
-
-    public static boolean isPrivate(Element annotatedClass) {
-        return annotatedClass.getModifiers().contains(Modifier.PRIVATE);
     }
 }
