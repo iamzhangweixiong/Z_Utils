@@ -148,6 +148,11 @@
                 android:id="@+id/AnimationBtn"
                 style="@style/ButtonOfMainFunc"
                 android:text="AnimationTestActivity" />
+
+            <Button
+                android:id="@+id/SpiBtn"
+                style="@style/ButtonOfMainFunc"
+                android:text="SpiTestActivity" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

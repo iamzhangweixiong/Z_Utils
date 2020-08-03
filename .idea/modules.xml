@@ -3,11 +3,14 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ annotation/ annotation.iml" filepath="$PROJECT_DIR$/ annotation/ annotation.iml" />
-      <module fileurl="file://$PROJECT_DIR$/AndroidStudioProjects-Z_Utils.iml" filepath="$PROJECT_DIR$/AndroidStudioProjects-Z_Utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AndroidStudioProjects-Z_Utils.iml" filepath="$PROJECT_DIR$/AndroidStudioProjects-Z_Utils.iml" group="Z_Utils" />
       <module fileurl="file://$PROJECT_DIR$/Z_Utils.iml" filepath="$PROJECT_DIR$/Z_Utils.iml" />
       <module fileurl="file://$PROJECT_DIR$/ annotation/Z_Utils- annotation.iml" filepath="$PROJECT_DIR$/ annotation/Z_Utils- annotation.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/Z_Utils-app.iml" filepath="$PROJECT_DIR$/app/Z_Utils-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/Z_Utils-app.iml" filepath="$PROJECT_DIR$/app/Z_Utils-app.iml" group="Z_Utils/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ annotation/_annotation.iml" filepath="$PROJECT_DIR$/.idea/modules/ annotation/_annotation.iml" group="Z_Utils/ annotation" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/spiinterface/spiinterface.iml" filepath="$PROJECT_DIR$/.idea/modules/spiinterface/spiinterface.iml" group="Z_Utils/spiinterface" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/spilibrary/spilibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/spilibrary/spilibrary.iml" group="Z_Utils/spilibrary" />
     </modules>
   </component>
 </project>

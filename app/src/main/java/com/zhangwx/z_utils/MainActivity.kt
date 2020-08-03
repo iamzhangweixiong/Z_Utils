@@ -17,6 +17,7 @@ import com.zhangwx.z_utils.Z_Processor.ProcessorActivity
 import com.zhangwx.z_utils.Z_RecycleView.RecycleActivity
 import com.zhangwx.z_utils.Z_Reflect.ReflectActivity
 import com.zhangwx.z_utils.Z_ScreenFix.ScreenFixActivity
+import com.zhangwx.z_utils.Z_Spi.SpiTestActivity
 import com.zhangwx.z_utils.Z_Thread.HandlerThreadActivity
 import com.zhangwx.z_utils.Z_TouchEvent.TouchTestActivity
 import com.zhangwx.z_utils.Z_ViewPager.ViewPagerActivity
@@ -49,6 +50,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         ScreenFixBtn.setOnClickListener(this)
         AidlBtn.setOnClickListener(this)
         AnimationBtn.setOnClickListener(this)
+        SpiBtn.setOnClickListener(this)
     }
 
     override fun onClick(view: View) {
@@ -73,6 +75,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.ScreenFixBtn -> intent.setClass(this, ScreenFixActivity::class.java)
             R.id.AidlBtn -> intent.setClass(this, AidlClientActivity::class.java)
             R.id.AnimationBtn -> intent.setClass(this, AnimationTestActivity::class.java)
+            R.id.SpiBtn -> intent.setClass(this, SpiTestActivity::class.java)
         }
         startActivity(intent)
     }

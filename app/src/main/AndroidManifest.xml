@@ -64,6 +64,7 @@
         <activity android:name=".Z_AIDL.AidlClientActivity" />
         <activity android:name=".Z_Webview.WebViewTestActivity" />
         <activity android:name=".Z_Anima.AnimationTestActivity" />
+        <activity android:name=".Z_Spi.SpiTestActivity" />
 
         <service
             android:name=".Z_Window.WindowService"
