@@ -1,0 +1,25 @@
+apply plugin: 'maven'
+apply plugin: 'kotlin'
+
+dependencies {
+
+    //gradle sdk
+    compileOnly gradleApi()
+    //本地发布 Plugin
+    implementation localGroovy()
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            pom.groupId = 'com.test.plugin'
+            pom.version = '1.0.0'
+            repository(url: uri('../repo'))
+        }
+    }
+}
+
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"

@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/spiinterface" />
             <option value="$PROJECT_DIR$/spilibrary" />
+            <option value="$PROJECT_DIR$/test_plugin" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

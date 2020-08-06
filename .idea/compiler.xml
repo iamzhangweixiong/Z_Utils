@@ -3,6 +3,8 @@
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
       <module name="_annotation" target="1.7" />
+      <module name="plugin" target="1.7" />
+      <module name="test_plugin" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

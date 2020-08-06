@@ -1,3 +1,4 @@
+include ':test_plugin'
 include ':spiinterface'
 include ':spilibrary'
 include ':app', ': annotation'

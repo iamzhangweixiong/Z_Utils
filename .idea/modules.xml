@@ -9,8 +9,9 @@
       <module fileurl="file://$PROJECT_DIR$/app/Z_Utils-app.iml" filepath="$PROJECT_DIR$/app/Z_Utils-app.iml" group="Z_Utils/app" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ annotation/_annotation.iml" filepath="$PROJECT_DIR$/.idea/modules/ annotation/_annotation.iml" group="Z_Utils/ annotation" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/spiinterface/spiinterface.iml" filepath="$PROJECT_DIR$/.idea/modules/spiinterface/spiinterface.iml" group="Z_Utils/spiinterface" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/spilibrary/spilibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/spilibrary/spilibrary.iml" group="Z_Utils/spilibrary" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SpiInterface/spiinterface.iml" filepath="$PROJECT_DIR$/.idea/modules/SpiInterface/spiinterface.iml" group="Z_Utils/spiinterface" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SPILibrary/spilibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/SPILibrary/spilibrary.iml" group="Z_Utils/spilibrary" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/test_plugin/test_plugin.iml" filepath="$PROJECT_DIR$/.idea/modules/test_plugin/test_plugin.iml" group="Z_Utils/test_plugin" />
     </modules>
   </component>
 </project>
