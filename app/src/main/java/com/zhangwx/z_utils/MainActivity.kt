@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.view.View
 import com.zhangwx.z_utils.Z_AIDL.AidlClientActivity
 import com.zhangwx.z_utils.Z_Anima.AnimationTestActivity
-import com.zhangwx.z_utils.Z_Cache.LruCacheActivity
+import com.zhangwx.z_utils.Z_Cache.CacheActivity
 import com.zhangwx.z_utils.Z_Components.ComponentsActivity
 import com.zhangwx.z_utils.Z_DB.DataBaseActivity
 import com.zhangwx.z_utils.Z_EventBus.EventBusActivity
@@ -70,7 +70,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.ProcessorBtn -> intent.setClass(this, ProcessorActivity::class.java)
             R.id.ComponentsBtn -> intent.setClass(this, ComponentsActivity::class.java)
             R.id.LifeCycleBtn -> intent.setClass(this, LifeCycleActivity::class.java)
-            R.id.CacheBtn -> intent.setClass(this, LruCacheActivity::class.java)
+            R.id.CacheBtn -> intent.setClass(this, CacheActivity::class.java)
             R.id.EventBusBtn -> intent.setClass(this, EventBusActivity::class.java)
             R.id.ScreenFixBtn -> intent.setClass(this, ScreenFixActivity::class.java)
             R.id.AidlBtn -> intent.setClass(this, AidlClientActivity::class.java)

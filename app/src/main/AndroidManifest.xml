@@ -57,7 +57,7 @@
         <activity android:name=".Z_LifeCycle.LifeCycleActivity" />
         <activity android:name=".Z_LifeCycle.LifeCycleTestActivity" />
         <activity android:name=".Z_Bitmap.BitmapTestActivity" />
-        <activity android:name=".Z_Cache.LruCacheActivity" />
+        <activity android:name=".Z_Cache.CacheActivity" />
         <activity android:name=".Z_EventBus.EventBusActivity" />
         <activity android:name=".Z_EventBus.EventBus2Activity" />
         <activity android:name=".Z_ScreenFix.ScreenFixActivity" />
