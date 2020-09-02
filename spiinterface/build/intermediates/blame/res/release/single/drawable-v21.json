@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "/Users/wilson/AndroidStudioProjects/Z_Utils/spiinterface/build/intermediates/res/merged/release/drawable-v21/notification_action_background.xml",
+        "source": "/Users/wilson/.gradle/caches/transforms-1/files-1.1/core-1.3.0.aar/d67e35848862f4d9750ca2b242c54969/res/drawable-v21/notification_action_background.xml"
+    },
+    {
+        "merged": "/Users/wilson/AndroidStudioProjects/Z_Utils/spiinterface/build/intermediates/res/merged/release/drawable-v21/abc_action_bar_item_background_material.xml",
+        "source": "/Users/wilson/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0.aar/06ab36dbf8bb3c49a050e181068ef4db/res/drawable-v21/abc_action_bar_item_background_material.xml"
+    },
+    {
+        "merged": "/Users/wilson/AndroidStudioProjects/Z_Utils/spiinterface/build/intermediates/res/merged/release/drawable-v21/abc_dialog_material_background.xml",
+        "source": "/Users/wilson/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0.aar/06ab36dbf8bb3c49a050e181068ef4db/res/drawable-v21/abc_dialog_material_background.xml"
+    },
+    {
+        "merged": "/Users/wilson/AndroidStudioProjects/Z_Utils/spiinterface/build/intermediates/res/merged/release/drawable-v21/abc_edit_text_material.xml",
+        "source": "/Users/wilson/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0.aar/06ab36dbf8bb3c49a050e181068ef4db/res/drawable-v21/abc_edit_text_material.xml"
+    },
+    {
+        "merged": "/Users/wilson/AndroidStudioProjects/Z_Utils/spiinterface/build/intermediates/res/merged/release/drawable-v21/abc_list_divider_material.xml",
+        "source": "/Users/wilson/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0.aar/06ab36dbf8bb3c49a050e181068ef4db/res/drawable-v21/abc_list_divider_material.xml"
+    },
+    {
+        "merged": "/Users/wilson/AndroidStudioProjects/Z_Utils/spiinterface/build/intermediates/res/merged/release/drawable-v21/abc_btn_colored_material.xml",
+        "source": "/Users/wilson/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0.aar/06ab36dbf8bb3c49a050e181068ef4db/res/drawable-v21/abc_btn_colored_material.xml"
+    }
+]

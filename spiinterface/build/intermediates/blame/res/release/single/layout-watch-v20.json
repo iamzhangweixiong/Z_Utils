@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/wilson/AndroidStudioProjects/Z_Utils/spiinterface/build/intermediates/res/merged/release/layout-watch-v20/abc_alert_dialog_button_bar_material.xml",
+        "source": "/Users/wilson/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0.aar/06ab36dbf8bb3c49a050e181068ef4db/res/layout-watch-v20/abc_alert_dialog_button_bar_material.xml"
+    },
+    {
+        "merged": "/Users/wilson/AndroidStudioProjects/Z_Utils/spiinterface/build/intermediates/res/merged/release/layout-watch-v20/abc_alert_dialog_title_material.xml",
+        "source": "/Users/wilson/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0.aar/06ab36dbf8bb3c49a050e181068ef4db/res/layout-watch-v20/abc_alert_dialog_title_material.xml"
+    }
+]

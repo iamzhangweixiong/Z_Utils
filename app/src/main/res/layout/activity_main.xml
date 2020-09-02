@@ -150,6 +150,11 @@
                 android:text="AnimationTestActivity" />
 
             <Button
+                android:id="@+id/MatrixBtn"
+                style="@style/ButtonOfMainFunc"
+                android:text="MatrixTestActivity" />
+
+            <Button
                 android:id="@+id/SpiBtn"
                 style="@style/ButtonOfMainFunc"
                 android:text="SpiTestActivity" />

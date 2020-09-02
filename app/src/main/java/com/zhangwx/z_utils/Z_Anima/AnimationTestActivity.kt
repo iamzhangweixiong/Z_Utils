@@ -1,14 +1,18 @@
 package com.zhangwx.z_utils.Z_Anima
 
-import android.animation.*
+import android.animation.Animator
+import android.animation.ObjectAnimator
+import android.animation.TimeAnimator
+import android.animation.ValueAnimator
 import android.annotation.TargetApi
 import android.os.Build
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import android.util.Log
-import android.util.Property
-import android.view.animation.*
-import com.facebook.common.logging.FLog
+import android.view.animation.Animation
+import android.view.animation.DecelerateInterpolator
+import android.view.animation.LinearInterpolator
+import android.view.animation.ScaleAnimation
+import androidx.appcompat.app.AppCompatActivity
 import com.zhangwx.z_utils.R
 import kotlinx.android.synthetic.main.activity_anima.*
 

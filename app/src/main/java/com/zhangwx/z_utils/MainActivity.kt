@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.view.View
 import com.zhangwx.z_utils.Z_AIDL.AidlClientActivity
 import com.zhangwx.z_utils.Z_Anima.AnimationTestActivity
+import com.zhangwx.z_utils.Z_Anima.MatrixTestActivity
 import com.zhangwx.z_utils.Z_Cache.CacheActivity
 import com.zhangwx.z_utils.Z_Components.ComponentsActivity
 import com.zhangwx.z_utils.Z_DB.DataBaseActivity
@@ -51,6 +52,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         AidlBtn.setOnClickListener(this)
         AnimationBtn.setOnClickListener(this)
         SpiBtn.setOnClickListener(this)
+        MatrixBtn.setOnClickListener(this)
     }
 
     override fun onClick(view: View) {
@@ -75,6 +77,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.ScreenFixBtn -> intent.setClass(this, ScreenFixActivity::class.java)
             R.id.AidlBtn -> intent.setClass(this, AidlClientActivity::class.java)
             R.id.AnimationBtn -> intent.setClass(this, AnimationTestActivity::class.java)
+            R.id.MatrixBtn -> intent.setClass(this, MatrixTestActivity::class.java)
             R.id.SpiBtn -> intent.setClass(this, SpiTestActivity::class.java)
         }
         startActivity(intent)
