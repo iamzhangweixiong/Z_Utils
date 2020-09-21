@@ -46,6 +46,7 @@ public class FilePath {
 
         /* ---------------- 私有文件夹: ---------------- */
         pathList.add("\n私有文件夹：");
+        pathList.add("内部自定义存储文件夹：\n" + context.getDir("ME", Context.MODE_PRIVATE).getPath());
         pathList.add("内部存储文件夹：\n" + context.getFilesDir().getPath());
         pathList.add("内部缓存文件夹：\n" + context.getCacheDir().getPath());
 
