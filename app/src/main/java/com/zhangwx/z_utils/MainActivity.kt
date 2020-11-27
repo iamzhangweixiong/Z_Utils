@@ -24,6 +24,7 @@ import com.zhangwx.z_utils.Z_TouchEvent.TouchTestActivity
 import com.zhangwx.z_utils.Z_ViewPager.ViewPagerActivity
 import com.zhangwx.z_utils.Z_Widget.WidgetTestActivity
 import com.zhangwx.z_utils.Z_Window.WindowActivity
+import com.zhangwx.z_utils.Z_coroutines.CoroutinesActivity
 import com.zhangwx.z_utils.Z_retrofit.RetrofitTestActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -53,6 +54,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         AnimationBtn.setOnClickListener(this)
         SpiBtn.setOnClickListener(this)
         MatrixBtn.setOnClickListener(this)
+        CoroutinesBtn.setOnClickListener(this)
     }
 
     override fun onClick(view: View) {
@@ -79,6 +81,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.AnimationBtn -> intent.setClass(this, AnimationTestActivity::class.java)
             R.id.MatrixBtn -> intent.setClass(this, MatrixTestActivity::class.java)
             R.id.SpiBtn -> intent.setClass(this, SpiTestActivity::class.java)
+            R.id.CoroutinesBtn -> intent.setClass(this, CoroutinesActivity::class.java)
         }
         startActivity(intent)
     }

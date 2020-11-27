@@ -67,6 +67,7 @@
         <activity android:name=".Z_Anima.MatrixTestActivity" />
         <activity android:name=".Z_Spi.SpiTestActivity" />
         <activity android:name=".Z_kt.KotlinTestActivity" />
+        <activity android:name=".Z_coroutines.CoroutinesActivity" />
 
         <service
             android:name=".Z_Window.WindowService"

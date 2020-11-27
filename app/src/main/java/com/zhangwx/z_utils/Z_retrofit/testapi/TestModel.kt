@@ -1,5 +1,6 @@
 package com.zhangwx.z_utils.Z_retrofit.testapi
 
+import android.annotation.SuppressLint
 import android.text.TextUtils
 import android.util.Log
 import com.google.gson.GsonBuilder
@@ -14,8 +15,8 @@ import javax.net.ssl.*
 
 class TestModel {
 
-    val manager = createX509TrustManager()!!
-    val factory = createSSLSocketFactory(manager)
+    private val manager = createX509TrustManager()!!
+    private val factory = createSSLSocketFactory(manager)
     private var okHttpClient = OkHttpClient.Builder()
             .sslSocketFactory(factory, manager)
             .build()
@@ -26,8 +27,9 @@ class TestModel {
             .addConverterFactory(GsonConverterFactory.create(GsonBuilder().setLenient().create()))
             .build()
 
+    @SuppressLint("CheckResult")
     fun testUrl(url: String, callBack: (Boolean) -> Unit) {
-        val _disposable = retrofit.create(TestInterface::class.java)
+        retrofit.create(TestInterface::class.java)
                 .testapi(url)
                 .subscribeOn(Schedulers.io())
                 .subscribe({
@@ -38,7 +40,7 @@ class TestModel {
                 })
     }
 
-    fun createX509TrustManager(): X509TrustManager? {
+    private fun createX509TrustManager(): X509TrustManager? {
         try {
             return object : X509TrustManager {
                 override fun checkClientTrusted(chain: Array<X509Certificate>, authType: String) {}
@@ -55,7 +57,7 @@ class TestModel {
         return null
     }
 
-    fun createSSLSocketFactory(trustManager: TrustManager): SSLSocketFactory {
+    private fun createSSLSocketFactory(trustManager: TrustManager): SSLSocketFactory {
         try {
             val context = SSLContext.getInstance("TLS")
             context.init(null, arrayOf(trustManager), null)
@@ -71,7 +73,7 @@ class TestModel {
             if (TextUtils.isEmpty(hostName)) {
                 return@HostnameVerifier false
             }
-            !Arrays.asList(*VERIFY_HOST_NAME_ARRAY).contains(hostName)
+            !listOf(*VERIFY_HOST_NAME_ARRAY).contains(hostName)
         }
     }
 
