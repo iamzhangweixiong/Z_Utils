@@ -6,8 +6,9 @@
     android:orientation="vertical"
     tools:context="com.zhangwx.z_utils.MainActivity">
 
-    <View
+    <Button
         android:id="@+id/kotlinxTestView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="Test" />
 </FrameLayout>

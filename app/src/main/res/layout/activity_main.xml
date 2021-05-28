@@ -163,6 +163,11 @@
                 android:id="@+id/CoroutinesBtn"
                 style="@style/ButtonOfMainFunc"
                 android:text="CoroutinesActivity" />
+
+            <Button
+                android:id="@+id/KotlinBtn"
+                style="@style/ButtonOfMainFunc"
+                android:text="KotlinTestActivity" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -25,6 +25,7 @@ import com.zhangwx.z_utils.Z_ViewPager.ViewPagerActivity
 import com.zhangwx.z_utils.Z_Widget.WidgetTestActivity
 import com.zhangwx.z_utils.Z_Window.WindowActivity
 import com.zhangwx.z_utils.Z_coroutines.CoroutinesActivity
+import com.zhangwx.z_utils.Z_kt.KotlinTestActivity
 import com.zhangwx.z_utils.Z_retrofit.RetrofitTestActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -55,6 +56,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         SpiBtn.setOnClickListener(this)
         MatrixBtn.setOnClickListener(this)
         CoroutinesBtn.setOnClickListener(this)
+        KotlinBtn.setOnClickListener(this)
     }
 
     override fun onClick(view: View) {
@@ -82,6 +84,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.MatrixBtn -> intent.setClass(this, MatrixTestActivity::class.java)
             R.id.SpiBtn -> intent.setClass(this, SpiTestActivity::class.java)
             R.id.CoroutinesBtn -> intent.setClass(this, CoroutinesActivity::class.java)
+            R.id.KotlinBtn -> intent.setClass(this, KotlinTestActivity::class.java)
         }
         startActivity(intent)
     }
