@@ -1,6 +1,5 @@
 package com.zhangwx.z_utils.Z_Reflect;
 
-
 import android.app.Activity;
 import android.content.Context;
 import android.os.Build;
@@ -14,6 +13,9 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
+/**
+ * 另一种解决方案参考头条 https://mp.weixin.qq.com/s/DmN9sN_MdugpVm73vnVqww，侵入性更低
+ */
 public class BadTokenFix {
     public static final String TAG = "BadTokenFix";
     public static final int TYPE_BASE_APPLICATION = 1;
