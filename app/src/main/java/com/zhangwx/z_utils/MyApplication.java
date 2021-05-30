@@ -5,6 +5,7 @@ import androidx.multidex.MultiDex;
 import androidx.multidex.MultiDexApplication;
 import com.facebook.stetho.Stetho;
 import com.squareup.leakcanary.LeakCanary;
+import com.zhangwx.z_utils.Z_LifeCycle.LifecycleCallbacksHandler;
 
 
 public class MyApplication extends MultiDexApplication {
@@ -18,6 +19,7 @@ public class MyApplication extends MultiDexApplication {
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
         MultiDex.install(base);
+        registerActivityLifecycleCallbacks(LifecycleCallbacksHandler.INSTANCE);
     }
 
     @Override

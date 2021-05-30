@@ -68,5 +68,7 @@ public class ReflectActivity extends Activity {
         }
 
         tv.setText(reflectTest.getTypeTwo());
+
+        BadTokenFix.fix(this);
     }
 }
