@@ -168,6 +168,11 @@
                 android:id="@+id/KotlinBtn"
                 style="@style/ButtonOfMainFunc"
                 android:text="KotlinTestActivity" />
+
+            <Button
+                android:id="@+id/RegexTestBtn"
+                style="@style/ButtonOfMainFunc"
+                android:text="RegexTestActivity" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

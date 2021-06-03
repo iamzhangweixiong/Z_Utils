@@ -17,6 +17,7 @@ import com.zhangwx.z_utils.Z_ListView.ListViewActivity
 import com.zhangwx.z_utils.Z_Processor.ProcessorActivity
 import com.zhangwx.z_utils.Z_RecycleView.RecycleActivity
 import com.zhangwx.z_utils.Z_Reflect.ReflectActivity
+import com.zhangwx.z_utils.Z_Regex.RegexTestActivity
 import com.zhangwx.z_utils.Z_ScreenFix.ScreenFixActivity
 import com.zhangwx.z_utils.Z_Spi.SpiTestActivity
 import com.zhangwx.z_utils.Z_Thread.HandlerThreadActivity
@@ -57,6 +58,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         MatrixBtn.setOnClickListener(this)
         CoroutinesBtn.setOnClickListener(this)
         KotlinBtn.setOnClickListener(this)
+        RegexTestBtn.setOnClickListener(this)
     }
 
     override fun onClick(view: View) {
@@ -85,6 +87,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.SpiBtn -> intent.setClass(this, SpiTestActivity::class.java)
             R.id.CoroutinesBtn -> intent.setClass(this, CoroutinesActivity::class.java)
             R.id.KotlinBtn -> intent.setClass(this, KotlinTestActivity::class.java)
+            R.id.RegexTestBtn -> intent.setClass(this, RegexTestActivity::class.java)
         }
         startActivity(intent)
     }
