@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/rx_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/single"
+        android:text="single"
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"/>
+
+    <Button
+        android:id="@+id/observable"
+        android:text="observable"
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"/>
+
+    <Button
+        android:id="@+id/observableJust"
+        android:text="observableJust"
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"/>
+</LinearLayout>

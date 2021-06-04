@@ -18,6 +18,7 @@ import com.zhangwx.z_utils.Z_Processor.ProcessorActivity
 import com.zhangwx.z_utils.Z_RecycleView.RecycleActivity
 import com.zhangwx.z_utils.Z_Reflect.ReflectActivity
 import com.zhangwx.z_utils.Z_Regex.RegexTestActivity
+import com.zhangwx.z_utils.Z_Rx.RxTestActivity
 import com.zhangwx.z_utils.Z_ScreenFix.ScreenFixActivity
 import com.zhangwx.z_utils.Z_Spi.SpiTestActivity
 import com.zhangwx.z_utils.Z_Thread.HandlerThreadActivity
@@ -59,6 +60,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         CoroutinesBtn.setOnClickListener(this)
         KotlinBtn.setOnClickListener(this)
         RegexTestBtn.setOnClickListener(this)
+        RxTestBtn.setOnClickListener(this)
     }
 
     override fun onClick(view: View) {
@@ -88,6 +90,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.CoroutinesBtn -> intent.setClass(this, CoroutinesActivity::class.java)
             R.id.KotlinBtn -> intent.setClass(this, KotlinTestActivity::class.java)
             R.id.RegexTestBtn -> intent.setClass(this, RegexTestActivity::class.java)
+            R.id.RxTestBtn -> intent.setClass(this, RxTestActivity::class.java)
         }
         startActivity(intent)
     }

@@ -69,6 +69,7 @@
         <activity android:name=".Z_kt.KotlinTestActivity" />
         <activity android:name=".Z_coroutines.CoroutinesActivity" />
         <activity android:name=".Z_Regex.RegexTestActivity" />
+        <activity android:name=".Z_Rx.RxTestActivity" />
 
         <service
             android:name=".Z_Window.WindowService"
