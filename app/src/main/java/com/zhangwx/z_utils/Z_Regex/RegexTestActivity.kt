@@ -1,5 +1,6 @@
 package com.zhangwx.z_utils.Z_Regex
 
+import android.content.Context
 import android.os.Build
 import android.os.Bundle
 import android.os.SystemClock
@@ -8,7 +9,6 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.zhangwx.z_utils.R
 import kotlinx.android.synthetic.main.activity_regex.*
-import kotlinx.coroutines.delay
 import java.util.regex.Matcher
 import java.util.regex.Pattern
 
@@ -61,6 +61,18 @@ class RegexTestActivity : AppCompatActivity() {
         start.setOnClickListener {
             Log.e(TAG, "elapsed duration = ${SystemClock.elapsedRealtime() - elapsedStartTime}")
             Log.e(TAG, "system duration = ${System.currentTimeMillis() - startTime}")
+        }
+
+        regex_result.text = getVersionCode(this)
+    }
+
+    private fun getVersionCode(context: Context?): String {
+        return try {
+            context?.packageManager?.getPackageInfo(context.packageName, 0)?.versionName
+                    ?: "UNKNOWN"
+        } catch (e: Throwable) {
+            e.printStackTrace()
+            "UNKNOWN"
         }
     }
 }

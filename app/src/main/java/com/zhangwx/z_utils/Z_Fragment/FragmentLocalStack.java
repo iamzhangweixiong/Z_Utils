@@ -10,7 +10,7 @@ import java.util.Stack;
 
 public class FragmentLocalStack {
 
-    private static Map<String, Stack<Fragment>> mStackMap = new HashMap<>();
+    private static final Map<String, Stack<Fragment>> mStackMap = new HashMap<>();
 
     public static Fragment pop(String stackTag) {
         final Stack<Fragment> fragmentStack = mStackMap.get(stackTag);

@@ -172,9 +172,7 @@ public class EnvUtil {
             apkCacheFile = MyApplication.getContext().getExternalFilesDir(null);
         } catch (NullPointerException e){
         } catch (SecurityException e) {
-            //fix http://trace.cm.ijinshan.com/index/dump?version=&date=20140708&thever=0&dumpkey=2769283760&field=%E6%97%A0&field_content=2769283760
         } catch (RuntimeException e) {
-            //fix http://trace-abord.cm.ijinshan.com/index/dump?thever=53&field=%E6%97%A0&field_content=&date=20151209&version=4701366&dumpkey=2029026254
         }
 
         String apkCacheDir = null;

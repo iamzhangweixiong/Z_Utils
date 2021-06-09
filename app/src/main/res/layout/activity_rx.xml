@@ -26,4 +26,10 @@
         android:text="observableJust"
         android:layout_width="wrap_content"
         android:layout_height="56dp"/>
+
+    <Button
+        android:id="@+id/observableDoOnError"
+        android:text="observableJust"
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"/>
 </LinearLayout>

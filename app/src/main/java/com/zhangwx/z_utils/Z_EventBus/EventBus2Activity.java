@@ -21,8 +21,9 @@ public class EventBus2Activity extends AppCompatActivity {
 
     @Subscribe(threadMode = ThreadMode.MAIN, sticky = true)
     public void onEvent(String data) {
-        TextView textView = findViewById(R.id.showResult);
-        textView.setText(data);
+        throw new RuntimeException("EventBus2Activity onEvent crash");
+//        TextView textView = findViewById(R.id.showResult);
+//        textView.setText(data);
     }
 
     @Override
